@@ -5,6 +5,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,8 +14,22 @@ import java.time.Duration;
 
 /**
  * Factory for creating and managing Selenium WebDriver instances.
- * Supports Chromium/Chrome in both headless and headed modes.
- * Uses ThreadLocal to support parallel execution.
+ *
+ * <h3>Flow name: DriverInitFlow</h3>
+ * <p>Supports Chrome and Firefox browsers in both headless and headed modes.
+ * Browser selection is driven by {@link ConfigManager#getBrowser()}. Uses
+ * ThreadLocal storage to support parallel test execution.</p>
+ *
+ * <h3>Contract</h3>
+ * <ul>
+ *   <li><b>Inputs:</b> browser type and headless flag from ConfigManager.</li>
+ *   <li><b>Outputs:</b> initialised {@link WebDriver} stored in ThreadLocal.</li>
+ *   <li><b>Errors:</b> {@link IllegalStateException} when accessing an
+ *       uninitialised driver; {@link UnsupportedOperationException} for
+ *       unknown browser types.</li>
+ *   <li><b>Side-effects:</b> WebDriverManager downloads browser drivers as
+ *       needed; browser process is launched.</li>
+ * </ul>
  */
 // PUBLIC_INTERFACE
 public final class DriverFactory {
@@ -22,24 +38,24 @@ public final class DriverFactory {
     private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
 
     private DriverFactory() {
-        // Utility class – no instantiation
+        // Utility class -- no instantiation
     }
 
     /**
-     * Initialize and return a new WebDriver instance based on configuration.
-     * The driver is stored in a ThreadLocal for safe parallel access.
+     * Initialise a new WebDriver instance based on configuration and store
+     * it in a ThreadLocal for safe parallel access.
      *
-     * @return the initialized WebDriver
+     * @return the initialised WebDriver
+     * @throws UnsupportedOperationException when an unknown browser is configured
      */
     // PUBLIC_INTERFACE
     public static WebDriver initDriver() {
-        LOG.info("Initializing WebDriver...");
+        String browser = ConfigManager.getBrowser();
+        boolean headless = ConfigManager.isHeadless();
 
-        // Setup ChromeDriver via WebDriverManager
-        WebDriverManager.chromedriver().setup();
+        LOG.info("Initialising WebDriver -- browser={}, headless={}", browser, headless);
 
-        ChromeOptions options = buildChromeOptions();
-        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = createDriver(browser, headless);
 
         // Configure timeouts from config
         driver.manage().timeouts().pageLoadTimeout(
@@ -49,7 +65,7 @@ public final class DriverFactory {
         driver.manage().window().maximize();
 
         DRIVER_THREAD_LOCAL.set(driver);
-        LOG.info("WebDriver initialized successfully (headless={})", ConfigManager.isHeadless());
+        LOG.info("WebDriver initialised successfully (browser={}, headless={})", browser, headless);
         return driver;
     }
 
@@ -57,20 +73,20 @@ public final class DriverFactory {
      * Retrieve the current thread's WebDriver instance.
      *
      * @return the WebDriver for the current thread
-     * @throws IllegalStateException if driver has not been initialized
+     * @throws IllegalStateException if the driver has not been initialised
      */
     // PUBLIC_INTERFACE
     public static WebDriver getDriver() {
         WebDriver driver = DRIVER_THREAD_LOCAL.get();
         if (driver == null) {
             throw new IllegalStateException(
-                    "WebDriver not initialized. Call DriverFactory.initDriver() first.");
+                    "WebDriver not initialised. Call DriverFactory.initDriver() first.");
         }
         return driver;
     }
 
     /**
-     * Quit the current thread's WebDriver and clean up.
+     * Quit the current thread's WebDriver and clean up the ThreadLocal.
      */
     // PUBLIC_INTERFACE
     public static void quitDriver() {
@@ -88,20 +104,41 @@ public final class DriverFactory {
         }
     }
 
-    /**
-     * Build ChromeOptions with headless/headed configuration and
-     * stability flags for CI environments.
-     */
-    private static ChromeOptions buildChromeOptions() {
-        ChromeOptions options = new ChromeOptions();
-        boolean headless = ConfigManager.isHeadless();
+    // --- Browser Strategy Dispatch ---
 
+    /**
+     * Create a WebDriver for the requested browser type.
+     *
+     * @param browser  browser identifier ({@code "chrome"} or {@code "firefox"})
+     * @param headless whether to run headless
+     * @return new WebDriver instance
+     */
+    private static WebDriver createDriver(String browser, boolean headless) {
+        switch (browser) {
+            case "chrome":
+            case "chromium":
+                return createChromeDriver(headless);
+            case "firefox":
+                return createFirefoxDriver(headless);
+            default:
+                LOG.error("Unsupported browser type: {}", browser);
+                throw new UnsupportedOperationException(
+                        "Browser '" + browser + "' is not supported. Use 'chrome' or 'firefox'.");
+        }
+    }
+
+    /**
+     * Create a Chrome/Chromium WebDriver with stability flags for CI.
+     */
+    private static WebDriver createChromeDriver(boolean headless) {
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions options = new ChromeOptions();
         if (headless) {
-            // Modern headless mode (Chrome 109+)
-            options.addArguments("--headless=new");
+            options.addArguments("--headless=new"); // Modern headless (Chrome 109+)
             LOG.info("Chrome configured in HEADLESS mode");
         } else {
-            LOG.info("Chrome configured in HEADED (non-headless) mode");
+            LOG.info("Chrome configured in HEADED mode");
         }
 
         // Stability and CI-friendly arguments
@@ -114,10 +151,29 @@ public final class DriverFactory {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-web-security");
         options.addArguments("--allow-insecure-localhost");
-
-        // Accept insecure certs (useful for test environments)
         options.setAcceptInsecureCerts(true);
 
-        return options;
+        return new ChromeDriver(options);
+    }
+
+    /**
+     * Create a Firefox WebDriver with headless support.
+     */
+    private static WebDriver createFirefoxDriver(boolean headless) {
+        WebDriverManager.firefoxdriver().setup();
+
+        FirefoxOptions options = new FirefoxOptions();
+        if (headless) {
+            options.addArguments("-headless");
+            LOG.info("Firefox configured in HEADLESS mode");
+        } else {
+            LOG.info("Firefox configured in HEADED mode");
+        }
+
+        options.addArguments("--width=1920");
+        options.addArguments("--height=1080");
+        options.setAcceptInsecureCerts(true);
+
+        return new FirefoxDriver(options);
     }
 }

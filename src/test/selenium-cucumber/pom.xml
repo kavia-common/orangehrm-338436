@@ -21,6 +21,12 @@
         <webdrivermanager.version>5.7.0</webdrivermanager.version>
         <slf4j.version>2.0.12</slf4j.version>
         <logback.version>1.5.3</logback.version>
+
+        <!-- Default values -- overridden by profiles or CLI -->
+        <test.environment>dev</test.environment>
+        <browser>chrome</browser>
+        <headless>true</headless>
+        <baseUrl></baseUrl>
     </properties>
 
     <dependencies>
@@ -97,7 +103,16 @@
                     <includes>
                         <include>**/TestRunner.java</include>
                     </includes>
+                    <!--
+                        Pass Maven properties as JVM system properties so that
+                        ConfigManager can read them via System.getProperty().
+                        Usage examples:
+                          mvn test -Dtest.environment=qa
+                          mvn test -Dbrowser=firefox -Dheadless=false
+                          mvn test -DbaseUrl=https://my-qa-server.example.com
+                    -->
                     <systemPropertyVariables>
+                        <test.environment>${test.environment}</test.environment>
                         <browser>${browser}</browser>
                         <headless>${headless}</headless>
                         <baseUrl>${baseUrl}</baseUrl>
@@ -108,6 +123,34 @@
     </build>
 
     <profiles>
+        <!-- === Environment profiles === -->
+
+        <!-- QA environment -->
+        <profile>
+            <id>qa</id>
+            <properties>
+                <test.environment>qa</test.environment>
+            </properties>
+        </profile>
+
+        <!-- Staging environment -->
+        <profile>
+            <id>staging</id>
+            <properties>
+                <test.environment>staging</test.environment>
+            </properties>
+        </profile>
+
+        <!-- Production environment (smoke tests only) -->
+        <profile>
+            <id>production</id>
+            <properties>
+                <test.environment>production</test.environment>
+            </properties>
+        </profile>
+
+        <!-- === Browser mode profiles === -->
+
         <!-- Headless profile (default for CI) -->
         <profile>
             <id>headless</id>
@@ -123,6 +166,16 @@
                 <headless>false</headless>
             </properties>
         </profile>
+
+        <!-- Firefox browser profile -->
+        <profile>
+            <id>firefox</id>
+            <properties>
+                <browser>firefox</browser>
+            </properties>
+        </profile>
+
+        <!-- === Test suite profiles === -->
 
         <!-- Smoke test profile -->
         <profile>

@@ -1,5 +1,7 @@
 package com.orangehrm.hooks;
 
+import com.orangehrm.config.ConfigManager;
+import com.orangehrm.config.EnvironmentConfig;
 import com.orangehrm.driver.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -12,24 +14,36 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Cucumber hooks for managing WebDriver lifecycle per scenario.
- * Handles driver initialization, screenshot capture on failure, and teardown.
+ * Handles driver initialisation, configuration logging, screenshot capture
+ * on failure, and teardown.
+ *
+ * <h3>Observability</h3>
+ * <p>On the first scenario of a run, the full configuration summary is logged
+ * so that CI logs always contain the runtime settings used.</p>
  */
 // PUBLIC_INTERFACE
 public class Hooks {
 
     private static final Logger LOG = LoggerFactory.getLogger(Hooks.class);
 
+    /** Guard flag so that the config summary is logged only once per JVM. */
+    private static volatile boolean configLogged = false;
+
     /**
-     * Before each scenario: initialize a fresh WebDriver instance.
+     * Before each scenario: log config (once), then initialise a fresh
+     * WebDriver instance.
      *
      * @param scenario the current Cucumber scenario
      */
     @Before(order = 0)
     public void setUp(Scenario scenario) {
-        LOG.info("═══════════════════════════════════════════════════");
+        logConfigOnce();
+
+        LOG.info("===================================================");
         LOG.info("STARTING SCENARIO: {}", scenario.getName());
         LOG.info("Tags: {}", scenario.getSourceTagNames());
-        LOG.info("═══════════════════════════════════════════════════");
+        LOG.info("Environment: {}", ConfigManager.getActiveEnvironment());
+        LOG.info("===================================================");
         DriverFactory.initDriver();
     }
 
@@ -49,10 +63,24 @@ public class Hooks {
             }
         } finally {
             DriverFactory.quitDriver();
-            LOG.info("═══════════════════════════════════════════════════");
+            LOG.info("===================================================");
             LOG.info("FINISHED SCENARIO: {} [{}]", scenario.getName(),
                     scenario.isFailed() ? "FAILED" : "PASSED");
-            LOG.info("═══════════════════════════════════════════════════\n");
+            LOG.info("===================================================");
+        }
+    }
+
+    /**
+     * Log the full configuration summary exactly once per test run.
+     */
+    private void logConfigOnce() {
+        if (!configLogged) {
+            synchronized (Hooks.class) {
+                if (!configLogged) {
+                    EnvironmentConfig.logConfigSummary();
+                    configLogged = true;
+                }
+            }
         }
     }
 
