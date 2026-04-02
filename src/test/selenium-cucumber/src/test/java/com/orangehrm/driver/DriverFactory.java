@@ -23,9 +23,15 @@ import java.time.Duration;
  * <h3>Thread safety</h3>
  * <p>Each thread gets its own WebDriver instance stored in a
  * {@link ThreadLocal}. This ensures complete isolation when running
- * parallel scenarios via Maven Surefire forks or JUnit parallel runners.
- * Callers must invoke {@link #quitDriver()} in an {@code @After} hook
- * to prevent browser process leaks.</p>
+ * parallel scenarios via Cucumber-native thread parallelism or Maven
+ * Surefire forks. Callers must invoke {@link #quitDriver()} in an
+ * {@code @After} hook to prevent browser process leaks.</p>
+ *
+ * <h3>Parallel execution isolation</h3>
+ * <p>Each browser instance gets a unique user-data/profile directory
+ * derived from the thread ID and nanosecond timestamp. This prevents
+ * profile lock conflicts when multiple Chrome/Firefox instances run
+ * concurrently on the same machine.</p>
  *
  * <h3>Resilience</h3>
  * <p>Driver initialization includes a configurable retry mechanism
@@ -41,7 +47,7 @@ import java.time.Duration;
  *       uninitialised driver; {@link UnsupportedOperationException} for
  *       unknown browser types.</li>
  *   <li><b>Side-effects:</b> WebDriverManager downloads browser drivers as
- *       needed; browser process is launched.</li>
+ *       needed; browser process is launched; temp profile directory created.</li>
  * </ul>
  */
 // PUBLIC_INTERFACE
@@ -179,6 +185,10 @@ public final class DriverFactory {
 
     /**
      * Create a Chrome/Chromium WebDriver with stability flags for CI.
+     *
+     * <p>Parallel execution safety: each thread gets a unique temporary
+     * user-data directory to prevent profile lock conflicts when multiple
+     * Chrome instances run concurrently.</p>
      */
     private static WebDriver createChromeDriver(boolean headless) {
         WebDriverManager.chromedriver().setup();
@@ -203,11 +213,22 @@ public final class DriverFactory {
         options.addArguments("--allow-insecure-localhost");
         options.setAcceptInsecureCerts(true);
 
+        // Parallel execution: unique user-data-dir per thread avoids Chrome profile locks
+        String threadUserDir = System.getProperty("java.io.tmpdir")
+                + "/chrome-profile-" + Thread.currentThread().getId()
+                + "-" + System.nanoTime();
+        options.addArguments("--user-data-dir=" + threadUserDir);
+        LOG.debug("Chrome user-data-dir for thread {}: {}", Thread.currentThread().getName(), threadUserDir);
+
         return new ChromeDriver(options);
     }
 
     /**
      * Create a Firefox WebDriver with headless support.
+     *
+     * <p>Parallel execution safety: each thread gets a unique Firefox profile
+     * directory to prevent profile lock conflicts when multiple Firefox
+     * instances run concurrently.</p>
      */
     private static WebDriver createFirefoxDriver(boolean headless) {
         WebDriverManager.firefoxdriver().setup();
@@ -223,6 +244,14 @@ public final class DriverFactory {
         options.addArguments("--width=1920");
         options.addArguments("--height=1080");
         options.setAcceptInsecureCerts(true);
+
+        // Parallel execution: unique profile dir per thread avoids Firefox profile locks
+        String threadProfileDir = System.getProperty("java.io.tmpdir")
+                + "/firefox-profile-" + Thread.currentThread().getId()
+                + "-" + System.nanoTime();
+        options.addArguments("-profile");
+        options.addArguments(threadProfileDir);
+        LOG.debug("Firefox profile dir for thread {}: {}", Thread.currentThread().getName(), threadProfileDir);
 
         return new FirefoxDriver(options);
     }

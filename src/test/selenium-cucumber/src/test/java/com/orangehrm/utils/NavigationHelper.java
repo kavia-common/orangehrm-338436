@@ -28,15 +28,13 @@ import org.slf4j.LoggerFactory;
  *
  * <h3>Thread safety</h3>
  * <p>Stateless utility class. All driver access is via ThreadLocal.
- * Each scenario should create its own instance or use static methods.</p>
+ * BasePage instances are created per-call via {@link #page()} to make
+ * the thread-safety contract explicit — no shared mutable state.</p>
  */
 // PUBLIC_INTERFACE
 public final class NavigationHelper {
 
     private static final Logger LOG = LoggerFactory.getLogger(NavigationHelper.class);
-
-    /** Shared BasePage instance for element interactions. */
-    private static final BasePage PAGE = new BasePage();
 
     /** Login page relative path. */
     private static final String LOGIN_PATH = "/auth/login";
@@ -49,6 +47,20 @@ public final class NavigationHelper {
 
     private NavigationHelper() {
         // Utility class — no instantiation
+    }
+
+    /**
+     * Create a fresh BasePage instance per call.
+     *
+     * <p>Although BasePage has no mutable instance state (all driver access is
+     * via ThreadLocal), creating instances per-call makes the thread-safety
+     * contract explicit and avoids any future risk if BasePage gains instance
+     * state.</p>
+     *
+     * @return a new BasePage instance
+     */
+    private static BasePage page() {
+        return new BasePage();
     }
 
     /**
@@ -68,15 +80,16 @@ public final class NavigationHelper {
 
         navigateToLoginPage();
 
-        WebElement usernameInput = PAGE.findOxdInputByLabel("Username");
+        BasePage bp = page();
+        WebElement usernameInput = bp.findOxdInputByLabel("Username");
         usernameInput.clear();
         usernameInput.sendKeys(username);
 
-        WebElement passwordInput = PAGE.findOxdInputByLabel("Password");
+        WebElement passwordInput = bp.findOxdInputByLabel("Password");
         passwordInput.clear();
         passwordInput.sendKeys(password);
 
-        PAGE.clickButtonByText("Login");
+        bp.clickButtonByText("Login");
         LOG.info("Login form submitted for user: '{}'", username);
     }
 
@@ -108,8 +121,9 @@ public final class NavigationHelper {
     // PUBLIC_INTERFACE
     public static void navigateToLoginPage() {
         LOG.info("NavigationHelper.navigateToLoginPage — navigating");
-        PAGE.navigateTo(LOGIN_PATH);
-        PAGE.waitForVisible(LOGIN_FORM);
+        BasePage bp = page();
+        bp.navigateTo(LOGIN_PATH);
+        bp.waitForVisible(LOGIN_FORM);
         LOG.info("NavigationHelper.navigateToLoginPage — login form visible");
     }
 
@@ -122,7 +136,7 @@ public final class NavigationHelper {
     // PUBLIC_INTERFACE
     public static void navigateToPage(String path) {
         LOG.info("NavigationHelper.navigateToPage — path: '{}'", path);
-        PAGE.navigateTo(path);
+        page().navigateTo(path);
         WaitUtils.forPageReady();
         LOG.info("NavigationHelper.navigateToPage — page ready");
     }
@@ -135,7 +149,7 @@ public final class NavigationHelper {
     public static void logout() {
         LOG.info("NavigationHelper.logout — starting");
         try {
-            PAGE.click(USER_DROPDOWN);
+            page().click(USER_DROPDOWN);
             WebElement logoutLink = WaitUtils.forClickable(
                     By.xpath("//a[contains(normalize-space(),'Logout')]"), 5);
             logoutLink.click();
@@ -165,6 +179,6 @@ public final class NavigationHelper {
      */
     // PUBLIC_INTERFACE
     public static boolean isLoggedIn() {
-        return PAGE.isElementVisible(USER_DROPDOWN, 3);
+        return page().isElementVisible(USER_DROPDOWN, 3);
     }
 }

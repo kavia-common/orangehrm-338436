@@ -12,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 
 /**
  * Cucumber hooks for managing WebDriver lifecycle per scenario.
@@ -33,7 +34,9 @@ import org.slf4j.LoggerFactory;
  * <h3>Observability</h3>
  * <p>On the first scenario of a run, the full configuration summary is logged
  * so that CI logs always contain the runtime settings used. Thread names are
- * included in log messages to aid parallel execution debugging.</p>
+ * included in log messages to aid parallel execution debugging. MDC context
+ * keys {@code scenario} and {@code thread} are set per scenario for
+ * structured log correlation.</p>
  *
  * <h3>Database-only scenario optimisation</h3>
  * <p>For scenarios tagged {@code @database} where the database is not
@@ -56,16 +59,25 @@ public class Hooks {
     private boolean driverInitialised = false;
 
     /**
-     * Before each scenario: log config (once), classify scenario by tags,
-     * then initialise a fresh WebDriver instance when needed.
+     * Before each scenario: set up MDC logging context, log config (once),
+     * classify scenario by tags, then initialise a fresh WebDriver instance
+     * when needed.
+     *
+     * <p>MDC keys {@code scenario} and {@code thread} are set for structured
+     * log correlation during parallel execution. They are cleared in
+     * {@link #tearDown(Scenario)}.</p>
      *
      * @param scenario the current Cucumber scenario
      */
     @Before(order = 0)
     public void setUp(Scenario scenario) {
+        // Set MDC context for structured, thread-safe logging in parallel runs
+        String threadName = Thread.currentThread().getName();
+        MDC.put("scenario", scenario.getName());
+        MDC.put("thread", threadName);
+
         logConfigOnce();
 
-        String threadName = Thread.currentThread().getName();
         LOG.info("===================================================");
         LOG.info("STARTING SCENARIO: {} [thread={}]", scenario.getName(), threadName);
         LOG.info("Tags: {}", scenario.getSourceTagNames());
@@ -106,6 +118,7 @@ public class Hooks {
 
     /**
      * After each scenario: capture screenshot on failure, then quit the driver.
+     * Cleans up MDC context to prevent leaking across scenarios on the same thread.
      *
      * @param scenario the current Cucumber scenario
      */
@@ -131,6 +144,9 @@ public class Hooks {
             LOG.info("FINISHED SCENARIO: {} [{}] [thread={}]", scenario.getName(),
                     scenario.isFailed() ? "FAILED" : "PASSED/SKIPPED", threadName);
             LOG.info("===================================================");
+            // Clean up MDC context to prevent leaking across scenarios on the same thread
+            MDC.remove("scenario");
+            MDC.remove("thread");
         }
     }
 

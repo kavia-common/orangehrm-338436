@@ -40,6 +40,15 @@
         -->
         <forkCount>1</forkCount>
         <reuseForks>true</reuseForks>
+
+        <!--
+            Cucumber parallel execution toggle.
+            Set to "true" to enable thread-per-scenario parallelism.
+            Set to "false" for fully sequential execution.
+            Override: mvn test -Dcucumber.execution.parallel.enabled=false
+        -->
+        <cucumber.parallel.enabled>true</cucumber.parallel.enabled>
+        <cucumber.parallel.threads>2</cucumber.parallel.threads>
     </properties>
 
     <dependencies>
@@ -121,7 +130,26 @@
                 </configuration>
             </plugin>
 
-            <!-- Surefire Plugin for running Cucumber tests -->
+            <!--
+                Surefire Plugin for running Cucumber tests.
+
+                Flow name: SurefireParallelExecutionFlow
+
+                Execution strategy:
+                  1. TestRunner runs FIRST — executes UI scenarios in parallel
+                     (via Cucumber-native thread-per-scenario parallelism).
+                  2. SequentialTestRunner runs SECOND — executes @sequential
+                     DB scenarios one-at-a-time with parallel disabled.
+
+                Both runners use the same JVM fork. Thread-based parallelism
+                is managed by Cucumber, not Surefire fork-based parallelism.
+                This avoids the overhead of launching multiple JVMs while
+                still achieving scenario-level parallelism.
+
+                Override: mvn test -Dcucumber.parallel.enabled=false (sequential)
+                          mvn test -Dcucumber.parallel.threads=4 (more threads)
+                          mvn test -DforkCount=2 (JVM-level parallelism)
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -129,29 +157,44 @@
                 <configuration>
                     <includes>
                         <include>**/TestRunner.java</include>
+                        <include>**/SequentialTestRunner.java</include>
                     </includes>
                     <!--
-                        Parallel execution via JVM forks.
-                        Each fork gets its own JVM with a separate ThreadLocal
-                        WebDriver, ensuring complete isolation.
-                        Override: mvn test -DforkCount=2
+                        Run test classes sequentially within each fork.
+                        TestRunner (parallel scenarios) runs first, then
+                        SequentialTestRunner (DB scenarios) runs after.
+                        Parallelism WITHIN TestRunner is handled by Cucumber threads.
+                    -->
+                    <runOrder>alphabetical</runOrder>
+                    <!--
+                        JVM fork configuration.
+                        Default: 1 fork (Cucumber handles parallelism via threads).
+                        For extra parallelism: mvn test -DforkCount=2
                     -->
                     <forkCount>${forkCount}</forkCount>
                     <reuseForks>${reuseForks}</reuseForks>
                     <!--
                         Pass Maven properties as JVM system properties so that
-                        ConfigManager can read them via System.getProperty().
+                        ConfigManager can read them via System.getProperty()
+                        and Cucumber can read parallel settings.
                         Usage examples:
                           mvn test -Dtest.environment=qa
                           mvn test -Dbrowser=firefox -Dheadless=false
                           mvn test -DbaseUrl=https://my-qa-server.example.com
-                          mvn test -DforkCount=2 (parallel execution)
+                          mvn test -DforkCount=2 (JVM-level parallelism)
+                          mvn test -Dcucumber.parallel.enabled=false (sequential mode)
+                          mvn test -Dcucumber.parallel.threads=4 (more parallel threads)
                     -->
                     <systemPropertyVariables>
                         <test.environment>${test.environment}</test.environment>
                         <browser>${browser}</browser>
                         <headless>${headless}</headless>
                         <baseUrl>${baseUrl}</baseUrl>
+                        <!-- Cucumber parallel execution settings -->
+                        <cucumber.execution.parallel.enabled>${cucumber.parallel.enabled}</cucumber.execution.parallel.enabled>
+                        <cucumber.execution.parallel.config.strategy>fixed</cucumber.execution.parallel.config.strategy>
+                        <cucumber.execution.parallel.config.fixed.parallelism>${cucumber.parallel.threads}</cucumber.execution.parallel.config.fixed.parallelism>
+                        <cucumber.execution.parallel.config.fixed.max-pool-size>8</cucumber.execution.parallel.config.fixed.max-pool-size>
                     </systemPropertyVariables>
                     <!-- Ensure each fork writes to separate report files -->
                     <reportFormat>plain</reportFormat>
@@ -256,27 +299,46 @@
 
         <!--
             === Parallel execution profile ===
-            Activates fork-based parallelism for faster CI runs.
+            Activates Cucumber thread-based parallelism with more threads.
             Usage: mvn test -Pparallel
-            Customise: mvn test -Pparallel -DforkCount=4
+            Customise: mvn test -Pparallel -Dcucumber.parallel.threads=4
         -->
         <profile>
             <id>parallel</id>
             <properties>
-                <forkCount>2</forkCount>
+                <cucumber.parallel.enabled>true</cucumber.parallel.enabled>
+                <cucumber.parallel.threads>4</cucumber.parallel.threads>
+                <forkCount>1</forkCount>
                 <reuseForks>true</reuseForks>
             </properties>
         </profile>
 
         <!--
             === High-parallelism profile (CI with many cores) ===
-            Uses half of available CPU cores.
+            Uses both Cucumber thread parallelism and JVM forks.
             Usage: mvn test -Pparallel-ci
         -->
         <profile>
             <id>parallel-ci</id>
             <properties>
+                <cucumber.parallel.enabled>true</cucumber.parallel.enabled>
+                <cucumber.parallel.threads>4</cucumber.parallel.threads>
                 <forkCount>0.5C</forkCount>
+                <reuseForks>true</reuseForks>
+            </properties>
+        </profile>
+
+        <!--
+            === Sequential execution profile ===
+            Disables all parallelism for debugging or flaky test investigation.
+            Usage: mvn test -Psequential
+        -->
+        <profile>
+            <id>sequential</id>
+            <properties>
+                <cucumber.parallel.enabled>false</cucumber.parallel.enabled>
+                <cucumber.parallel.threads>1</cucumber.parallel.threads>
+                <forkCount>1</forkCount>
                 <reuseForks>true</reuseForks>
             </properties>
         </profile>

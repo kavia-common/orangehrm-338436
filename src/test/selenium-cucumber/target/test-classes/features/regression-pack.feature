@@ -39,15 +39,17 @@ Feature: OrangeHRM Top-Priority Regression Pack
     Then no script execution should occur
     And the user should remain on the login page
 
-  @login
+  @login @flaky
   Scenario: Disabled user cannot log in
+    # Flaky: requires pre-configured disabled user account in test environment
     Given a user account exists that has been disabled
     When the disabled user attempts to log in with valid credentials
     Then the login page should display an error message
     And the user should remain on the login page
 
-  @login
+  @login @flaky
   Scenario: Terminated employee cannot log in
+    # Flaky: requires pre-configured terminated employee in test environment
     Given an employee has been terminated but the user account still exists
     When the terminated employee attempts to log in
     Then the login page should display an error message
