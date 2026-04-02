@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
@@ -25,6 +26,18 @@ import static org.junit.Assume.assumeTrue;
  * directly against the OrangeHRM MySQL database. All database connectivity is
  * resolved through {@link ConfigManager}, enabling environment-switching
  * (dev/qa/staging/production) with no hardcoded values.</p>
+ *
+ * <h3>Thread safety</h3>
+ * <p>Cucumber PicoContainer creates a fresh instance of this class for each
+ * scenario. All mutable fields ({@code lastAffectedRows}, {@code lastQueryResults},
+ * {@code currentTable}, {@code currentRowData}, etc.) are therefore
+ * scenario-scoped and thread-safe by design — no two scenarios share the
+ * same instance.</p>
+ *
+ * <h3>Parallel execution safety</h3>
+ * <p>Database scenarios that use hardcoded IDs (e.g. {@code id=999}) must
+ * be tagged {@code @sequential} to prevent parallel conflicts. Alternatively,
+ * use the {@link #generateUniqueId()} helper to produce thread-safe IDs.</p>
  *
  * <h3>Contract</h3>
  * <ul>
@@ -45,6 +58,13 @@ import static org.junit.Assume.assumeTrue;
 public class DatabaseValidationSteps {
 
     private static final Logger LOG = LoggerFactory.getLogger(DatabaseValidationSteps.class);
+
+    /**
+     * Global atomic counter for generating unique IDs across threads.
+     * Base offset uses thread ID to further reduce collision probability.
+     */
+    private static final AtomicInteger ID_COUNTER = new AtomicInteger(
+            (int) (Thread.currentThread().getId() * 1000 % 900000) + 100000);
 
     /** Stores the last affected row count from a DML operation. */
     private int lastAffectedRows;
@@ -405,6 +425,18 @@ public class DatabaseValidationSteps {
     }
 
     // ─── Internal Helpers ───
+
+    /**
+     * Generate a unique integer ID suitable for use in parallel test data.
+     * Combines an atomic counter with the current thread ID to avoid
+     * collisions between concurrent scenarios.
+     *
+     * @return a unique positive integer
+     */
+    // PUBLIC_INTERFACE
+    public static int generateUniqueId() {
+        return ID_COUNTER.incrementAndGet();
+    }
 
     /**
      * Parse a comma-separated string of "column=value" pairs into a map.

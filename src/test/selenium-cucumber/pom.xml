@@ -27,6 +27,19 @@
         <browser>chrome</browser>
         <headless>true</headless>
         <baseUrl></baseUrl>
+
+        <!--
+            Parallel execution defaults.
+            forkCount: number of JVM forks for parallel execution.
+              - Use "1" for sequential (default, safest).
+              - Use "2" or "0.5C" (half of available cores) for parallel.
+            reuseForks: whether to reuse forked JVMs across test classes.
+              - "true" reuses (faster startup, but shared JVM state).
+              - "false" creates fresh JVMs (safer isolation, slower).
+            Override: mvn test -DforkCount=2 -DreuseForks=true
+        -->
+        <forkCount>1</forkCount>
+        <reuseForks>true</reuseForks>
     </properties>
 
     <dependencies>
@@ -118,12 +131,21 @@
                         <include>**/TestRunner.java</include>
                     </includes>
                     <!--
+                        Parallel execution via JVM forks.
+                        Each fork gets its own JVM with a separate ThreadLocal
+                        WebDriver, ensuring complete isolation.
+                        Override: mvn test -DforkCount=2
+                    -->
+                    <forkCount>${forkCount}</forkCount>
+                    <reuseForks>${reuseForks}</reuseForks>
+                    <!--
                         Pass Maven properties as JVM system properties so that
                         ConfigManager can read them via System.getProperty().
                         Usage examples:
                           mvn test -Dtest.environment=qa
                           mvn test -Dbrowser=firefox -Dheadless=false
                           mvn test -DbaseUrl=https://my-qa-server.example.com
+                          mvn test -DforkCount=2 (parallel execution)
                     -->
                     <systemPropertyVariables>
                         <test.environment>${test.environment}</test.environment>
@@ -131,6 +153,9 @@
                         <headless>${headless}</headless>
                         <baseUrl>${baseUrl}</baseUrl>
                     </systemPropertyVariables>
+                    <!-- Ensure each fork writes to separate report files -->
+                    <reportFormat>plain</reportFormat>
+                    <trimStackTrace>false</trimStackTrace>
                 </configuration>
             </plugin>
         </plugins>
@@ -227,6 +252,33 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+
+        <!--
+            === Parallel execution profile ===
+            Activates fork-based parallelism for faster CI runs.
+            Usage: mvn test -Pparallel
+            Customise: mvn test -Pparallel -DforkCount=4
+        -->
+        <profile>
+            <id>parallel</id>
+            <properties>
+                <forkCount>2</forkCount>
+                <reuseForks>true</reuseForks>
+            </properties>
+        </profile>
+
+        <!--
+            === High-parallelism profile (CI with many cores) ===
+            Uses half of available CPU cores.
+            Usage: mvn test -Pparallel-ci
+        -->
+        <profile>
+            <id>parallel-ci</id>
+            <properties>
+                <forkCount>0.5C</forkCount>
+                <reuseForks>true</reuseForks>
+            </properties>
         </profile>
     </profiles>
 </project>

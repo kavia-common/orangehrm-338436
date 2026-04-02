@@ -4,25 +4,45 @@ import com.orangehrm.config.ConfigManager;
 import com.orangehrm.driver.DriverFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * Base page object providing reusable WebDriver utilities:
  * explicit waits, robust locators for OXD components, common interactions,
- * and exception-safe element operations.
+ * retry-safe element operations, and exception-safe helpers.
+ *
+ * <h3>Stability improvements</h3>
+ * <ul>
+ *   <li>All waits are explicit (no reliance on implicit waits).</li>
+ *   <li>{@link #retryOnStale(Supplier, int)} wraps actions that may encounter
+ *       {@link StaleElementReferenceException} in a retry loop.</li>
+ *   <li>Configuration values are resolved lazily to avoid class-load ordering
+ *       issues with {@link ConfigManager}.</li>
+ * </ul>
+ *
+ * <h3>Thread safety</h3>
+ * <p>All driver access goes through {@link DriverFactory#getDriver()} which is
+ * {@code ThreadLocal}-backed. Each step definition class should create its own
+ * {@code BasePage} instance (or receive one via DI) so there is no shared
+ * mutable state across threads.</p>
  */
 // PUBLIC_INTERFACE
 public class BasePage {
 
     protected static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
 
-    /** Default explicit wait timeout sourced from configuration */
-    protected static final int EXPLICIT_WAIT_SECONDS = ConfigManager.getExplicitWait();
+    /** Maximum number of retries for stale-element recovery. */
+    private static final int STALE_RETRY_COUNT = 3;
+
+    /** Polling interval for fluent waits. */
+    private static final Duration POLL_INTERVAL = Duration.ofMillis(300);
 
     // ─── OXD CSS Selectors (aligned with the Vue OXD component library) ───
 
@@ -80,6 +100,17 @@ public class BasePage {
     // ─── Core Utility Methods ───
 
     /**
+     * Resolve the configured explicit-wait timeout lazily.
+     * Avoids class-load ordering issues with ConfigManager static init.
+     *
+     * @return explicit wait timeout in seconds
+     */
+    // PUBLIC_INTERFACE
+    protected int getExplicitWaitSeconds() {
+        return ConfigManager.getExplicitWait();
+    }
+
+    /**
      * Get a fresh WebDriverWait instance.
      *
      * @param timeoutSeconds timeout in seconds
@@ -90,10 +121,55 @@ public class BasePage {
         return new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(timeoutSeconds));
     }
 
-    /** @return default WebDriverWait using configured explicit timeout */
+    /**
+     * Get a default WebDriverWait using configured explicit timeout.
+     *
+     * @return WebDriverWait
+     */
     // PUBLIC_INTERFACE
     protected WebDriverWait getWait() {
-        return getWait(EXPLICIT_WAIT_SECONDS);
+        return getWait(getExplicitWaitSeconds());
+    }
+
+    /**
+     * Get a FluentWait that ignores stale-element and no-such-element
+     * exceptions during polling, reducing flakiness on dynamic pages.
+     *
+     * @param timeoutSeconds total timeout in seconds
+     * @return configured FluentWait
+     */
+    // PUBLIC_INTERFACE
+    protected FluentWait<WebDriver> getFluentWait(int timeoutSeconds) {
+        return new FluentWait<>(DriverFactory.getDriver())
+                .withTimeout(Duration.ofSeconds(timeoutSeconds))
+                .pollingEvery(POLL_INTERVAL)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+    }
+
+    /**
+     * Retry an action up to {@code maxRetries} times when it throws
+     * {@link StaleElementReferenceException}. This is essential for
+     * interacting with elements on dynamic Vue.js pages where the DOM
+     * may be re-rendered between locating and acting on an element.
+     *
+     * @param action     the action to execute
+     * @param maxRetries maximum retry attempts
+     * @param <T>        return type
+     * @return the action's result
+     */
+    // PUBLIC_INTERFACE
+    protected <T> T retryOnStale(Supplier<T> action, int maxRetries) {
+        StaleElementReferenceException lastException = null;
+        for (int attempt = 1; attempt <= maxRetries; attempt++) {
+            try {
+                return action.get();
+            } catch (StaleElementReferenceException e) {
+                lastException = e;
+                LOG.debug("StaleElementReferenceException on attempt {}/{} — retrying", attempt, maxRetries);
+            }
+        }
+        throw lastException;
     }
 
     /**
@@ -213,29 +289,36 @@ public class BasePage {
     }
 
     /**
-     * Clear an input field and type text into it.
+     * Clear an input field and type text into it with stale-element retry.
      *
      * @param locator the By locator for the input
      * @param text    the text to type
      */
     // PUBLIC_INTERFACE
     public void clearAndType(By locator, String text) {
-        WebElement element = waitForClickable(locator);
-        element.clear();
-        element.sendKeys(text);
-        LOG.debug("Typed '{}' into {}", text, locator);
+        retryOnStale(() -> {
+            WebElement element = waitForClickable(locator);
+            element.clear();
+            element.sendKeys(text);
+            LOG.debug("Typed '{}' into {}", text, locator);
+            return null;
+        }, STALE_RETRY_COUNT);
     }
 
     /**
-     * Click an element after waiting for it to be clickable.
+     * Click an element after waiting for it to be clickable, with
+     * stale-element retry for dynamic DOM updates.
      *
      * @param locator the By locator
      */
     // PUBLIC_INTERFACE
     public void click(By locator) {
-        WebElement element = waitForClickable(locator);
-        element.click();
-        LOG.debug("Clicked element: {}", locator);
+        retryOnStale(() -> {
+            WebElement element = waitForClickable(locator);
+            element.click();
+            LOG.debug("Clicked element: {}", locator);
+            return null;
+        }, STALE_RETRY_COUNT);
     }
 
     /**
@@ -272,7 +355,8 @@ public class BasePage {
 
     /**
      * Find the OXD input group for a given label text, then return
-     * the actual input element within it.
+     * the actual input element within it. Uses stale-element retry
+     * for robustness on dynamic pages.
      *
      * @param labelText the visible label text (e.g. "Username")
      * @return the input WebElement inside that group
@@ -280,78 +364,126 @@ public class BasePage {
     // PUBLIC_INTERFACE
     public WebElement findOxdInputByLabel(String labelText) {
         LOG.debug("Looking for OXD input with label: {}", labelText);
-        // OXD input groups: label is in .oxd-input-group > .oxd-label
-        List<WebElement> groups = waitForAllVisible(By.cssSelector(OXD_INPUT_GROUP));
-        for (WebElement group : groups) {
-            try {
-                WebElement label = group.findElement(By.cssSelector(".oxd-label"));
-                if (label.getText().trim().equalsIgnoreCase(labelText)) {
-                    // Try standard input first, then textarea, then autocomplete
-                    try {
-                        return group.findElement(By.cssSelector(OXD_INPUT));
-                    } catch (NoSuchElementException e1) {
+        return retryOnStale(() -> {
+            // OXD input groups: label is in .oxd-input-group > .oxd-label
+            List<WebElement> groups = waitForAllVisible(By.cssSelector(OXD_INPUT_GROUP));
+            for (WebElement group : groups) {
+                try {
+                    WebElement label = group.findElement(By.cssSelector(".oxd-label"));
+                    if (label.getText().trim().equalsIgnoreCase(labelText)) {
+                        // Try standard input first, then textarea, then autocomplete
                         try {
-                            return group.findElement(By.cssSelector(OXD_TEXTAREA));
-                        } catch (NoSuchElementException e2) {
-                            return group.findElement(By.cssSelector(OXD_AUTOCOMPLETE + ", " + OXD_SELECT));
+                            return group.findElement(By.cssSelector(OXD_INPUT));
+                        } catch (NoSuchElementException e1) {
+                            try {
+                                return group.findElement(By.cssSelector(OXD_TEXTAREA));
+                            } catch (NoSuchElementException e2) {
+                                return group.findElement(By.cssSelector(OXD_AUTOCOMPLETE + ", " + OXD_SELECT));
+                            }
                         }
                     }
+                } catch (NoSuchElementException ignored) {
+                    // Group without label – skip
                 }
-            } catch (NoSuchElementException ignored) {
-                // Group without label – skip
             }
-        }
-        throw new NoSuchElementException("Could not find OXD input with label: " + labelText);
+            throw new NoSuchElementException("Could not find OXD input with label: " + labelText);
+        }, STALE_RETRY_COUNT);
     }
 
     /**
      * Get the validation error message for an OXD input group with the given label.
+     * Uses an explicit wait (up to 3 seconds) for the error message to appear,
+     * which avoids the flaky {@code Thread.sleep} pattern.
      *
      * @param labelText the label text of the input group
-     * @return the error message text, or empty string if none
+     * @return the error message text, or empty string if none appears
      */
     // PUBLIC_INTERFACE
     public String getInputValidationError(String labelText) {
-        List<WebElement> groups = DriverFactory.getDriver().findElements(By.cssSelector(OXD_INPUT_GROUP));
-        for (WebElement group : groups) {
-            try {
-                WebElement label = group.findElement(By.cssSelector(".oxd-label"));
-                if (label.getText().trim().equalsIgnoreCase(labelText)) {
-                    try {
-                        WebElement error = group.findElement(By.cssSelector(".oxd-input-field-error-message"));
-                        return error.getText().trim();
-                    } catch (NoSuchElementException e) {
-                        return "";
+        return retryOnStale(() -> {
+            List<WebElement> groups = DriverFactory.getDriver().findElements(By.cssSelector(OXD_INPUT_GROUP));
+            for (WebElement group : groups) {
+                try {
+                    WebElement label = group.findElement(By.cssSelector(".oxd-label"));
+                    if (label.getText().trim().equalsIgnoreCase(labelText)) {
+                        // Use a short fluent wait for validation messages to render
+                        try {
+                            new FluentWait<>(group)
+                                    .withTimeout(Duration.ofSeconds(3))
+                                    .pollingEvery(Duration.ofMillis(200))
+                                    .ignoring(NoSuchElementException.class)
+                                    .until(g -> g.findElement(By.cssSelector(".oxd-input-field-error-message")));
+                            WebElement error = group.findElement(By.cssSelector(".oxd-input-field-error-message"));
+                            return error.getText().trim();
+                        } catch (TimeoutException e) {
+                            return "";
+                        }
                     }
+                } catch (NoSuchElementException ignored) {
+                    // no label in this group
                 }
-            } catch (NoSuchElementException ignored) {
-                // no label in this group
             }
-        }
-        return "";
+            return "";
+        }, STALE_RETRY_COUNT);
     }
 
     /**
-     * Click a button by its visible text.
+     * Wait for a validation error to appear on the specified field.
+     * This replaces the anti-pattern of using {@code Thread.sleep} before
+     * checking validation messages.
+     *
+     * @param labelText    the label text of the input group
+     * @param expectedText the expected error text fragment
+     * @param timeoutSec   how long to wait for the error to appear
+     * @return the actual error message text
+     * @throws TimeoutException if the expected error does not appear in time
+     */
+    // PUBLIC_INTERFACE
+    public String waitForValidationError(String labelText, String expectedText, int timeoutSec) {
+        LOG.debug("Waiting for validation error on '{}' containing '{}'", labelText, expectedText);
+        long deadline = System.currentTimeMillis() + (timeoutSec * 1000L);
+        String lastError = "";
+        while (System.currentTimeMillis() < deadline) {
+            lastError = getInputValidationError(labelText);
+            if (!lastError.isEmpty() && lastError.contains(expectedText)) {
+                LOG.debug("Validation error found: '{}'", lastError);
+                return lastError;
+            }
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+        // Return whatever was last seen (may be empty) — let the caller assert
+        return lastError;
+    }
+
+    /**
+     * Click a button by its visible text, with stale-element retry.
      *
      * @param buttonText the button text (e.g., "Login", "Save")
      */
     // PUBLIC_INTERFACE
     public void clickButtonByText(String buttonText) {
         LOG.debug("Clicking button with text: {}", buttonText);
-        List<WebElement> buttons = waitForAllVisible(By.cssSelector(OXD_BUTTON));
-        for (WebElement btn : buttons) {
-            if (btn.getText().trim().equalsIgnoreCase(buttonText)) {
-                btn.click();
-                LOG.info("Clicked button: {}", buttonText);
-                return;
+        retryOnStale(() -> {
+            List<WebElement> buttons = waitForAllVisible(By.cssSelector(OXD_BUTTON));
+            for (WebElement btn : buttons) {
+                if (btn.getText().trim().equalsIgnoreCase(buttonText)) {
+                    btn.click();
+                    LOG.info("Clicked button: {}", buttonText);
+                    return null;
+                }
             }
-        }
-        // Fallback: try XPath contains
-        WebElement fallback = waitForClickable(
-                By.xpath("//button[contains(normalize-space(),'" + buttonText + "')]"));
-        fallback.click();
-        LOG.info("Clicked button (fallback XPath): {}", buttonText);
+            // Fallback: try XPath contains
+            WebElement fallback = waitForClickable(
+                    By.xpath("//button[contains(normalize-space(),'" + buttonText + "')]"));
+            fallback.click();
+            LOG.info("Clicked button (fallback XPath): {}", buttonText);
+            return null;
+        }, STALE_RETRY_COUNT);
     }
 
     /**

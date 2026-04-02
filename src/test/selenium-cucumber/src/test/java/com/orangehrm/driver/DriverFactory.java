@@ -20,6 +20,19 @@ import java.time.Duration;
  * Browser selection is driven by {@link ConfigManager#getBrowser()}. Uses
  * ThreadLocal storage to support parallel test execution.</p>
  *
+ * <h3>Thread safety</h3>
+ * <p>Each thread gets its own WebDriver instance stored in a
+ * {@link ThreadLocal}. This ensures complete isolation when running
+ * parallel scenarios via Maven Surefire forks or JUnit parallel runners.
+ * Callers must invoke {@link #quitDriver()} in an {@code @After} hook
+ * to prevent browser process leaks.</p>
+ *
+ * <h3>Resilience</h3>
+ * <p>Driver initialization includes a configurable retry mechanism
+ * ({@code driver.init.retries}, default 2) to handle transient CI
+ * failures such as browser crashes on startup or driver download
+ * timeouts.</p>
+ *
  * <h3>Contract</h3>
  * <ul>
  *   <li><b>Inputs:</b> browser type and headless flag from ConfigManager.</li>
@@ -37,35 +50,70 @@ public final class DriverFactory {
     private static final Logger LOG = LoggerFactory.getLogger(DriverFactory.class);
     private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
 
+    /** Number of retry attempts for driver initialization (handles transient CI failures). */
+    private static final int INIT_RETRIES = parseIntSafe(ConfigManager.get("driver.init.retries", "2"));
+
+    /** Delay between retry attempts in milliseconds. */
+    private static final long RETRY_DELAY_MS = 2000L;
+
     private DriverFactory() {
         // Utility class -- no instantiation
     }
 
     /**
      * Initialise a new WebDriver instance based on configuration and store
-     * it in a ThreadLocal for safe parallel access.
+     * it in a ThreadLocal for safe parallel access. Retries on failure
+     * up to the configured retry count.
      *
      * @return the initialised WebDriver
      * @throws UnsupportedOperationException when an unknown browser is configured
+     * @throws RuntimeException if all retry attempts fail
      */
     // PUBLIC_INTERFACE
     public static WebDriver initDriver() {
         String browser = ConfigManager.getBrowser();
         boolean headless = ConfigManager.isHeadless();
 
-        LOG.info("Initialising WebDriver -- browser={}, headless={}", browser, headless);
+        LOG.info("Initialising WebDriver — browser={}, headless={}, thread={}",
+                browser, headless, Thread.currentThread().getName());
 
-        WebDriver driver = createDriver(browser, headless);
+        WebDriver driver = null;
+        Exception lastException = null;
+
+        for (int attempt = 1; attempt <= INIT_RETRIES; attempt++) {
+            try {
+                driver = createDriver(browser, headless);
+                break; // Success — exit retry loop
+            } catch (Exception e) {
+                lastException = e;
+                LOG.warn("WebDriver init attempt {}/{} failed: {}", attempt, INIT_RETRIES, e.getMessage());
+                if (attempt < INIT_RETRIES) {
+                    try {
+                        Thread.sleep(RETRY_DELAY_MS);
+                    } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                        throw new RuntimeException("Interrupted during WebDriver init retry", ie);
+                    }
+                }
+            }
+        }
+
+        if (driver == null) {
+            throw new RuntimeException(
+                    "Failed to initialise WebDriver after " + INIT_RETRIES + " attempts", lastException);
+        }
 
         // Configure timeouts from config
         driver.manage().timeouts().pageLoadTimeout(
                 Duration.ofSeconds(ConfigManager.getPageLoadTimeout()));
-        driver.manage().timeouts().implicitlyWait(
-                Duration.ofSeconds(Integer.parseInt(ConfigManager.get("wait.implicit", "5"))));
+        // NOTE: Implicit waits are intentionally set to 0 to avoid interference
+        // with explicit waits. All element lookups use explicit waits via BasePage.
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         driver.manage().window().maximize();
 
         DRIVER_THREAD_LOCAL.set(driver);
-        LOG.info("WebDriver initialised successfully (browser={}, headless={})", browser, headless);
+        LOG.info("WebDriver initialised successfully (browser={}, headless={}, thread={})",
+                browser, headless, Thread.currentThread().getName());
         return driver;
     }
 
@@ -87,19 +135,21 @@ public final class DriverFactory {
 
     /**
      * Quit the current thread's WebDriver and clean up the ThreadLocal.
+     * Safe to call even if the driver was never initialised (no-op).
      */
     // PUBLIC_INTERFACE
     public static void quitDriver() {
         WebDriver driver = DRIVER_THREAD_LOCAL.get();
         if (driver != null) {
-            LOG.info("Quitting WebDriver...");
+            LOG.info("Quitting WebDriver (thread={})...", Thread.currentThread().getName());
             try {
                 driver.quit();
             } catch (Exception e) {
                 LOG.warn("Error while quitting WebDriver: {}", e.getMessage());
             } finally {
                 DRIVER_THREAD_LOCAL.remove();
-                LOG.info("WebDriver instance removed from ThreadLocal");
+                LOG.info("WebDriver instance removed from ThreadLocal (thread={})",
+                        Thread.currentThread().getName());
             }
         }
     }
@@ -175,5 +225,19 @@ public final class DriverFactory {
         options.setAcceptInsecureCerts(true);
 
         return new FirefoxDriver(options);
+    }
+
+    /**
+     * Parse an integer safely, returning a default on failure.
+     *
+     * @param value the string to parse
+     * @return parsed integer or 2 as fallback
+     */
+    private static int parseIntSafe(String value) {
+        try {
+            return Integer.parseInt(value.trim());
+        } catch (NumberFormatException e) {
+            return 2;
+        }
     }
 }

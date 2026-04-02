@@ -218,3 +218,158 @@
 2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion does not affect unrelated records [FAILED]
 2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:12.940 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 09:45:12.941 [main] INFO  c.orangehrm.config.EnvironmentConfig -         TEST CONFIGURATION SUMMARY                      
+2026-04-02 09:45:12.941 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 09:45:12.942 [main] INFO  com.orangehrm.config.ConfigManager - Loaded configuration from config.properties
+2026-04-02 09:45:12.943 [main] INFO  com.orangehrm.config.ConfigManager - Environment resolved from system property: dev
+2026-04-02 09:45:12.943 [main] INFO  com.orangehrm.config.ConfigManager - ConfigManager initialised -- active environment: [dev]
+2026-04-02 09:45:12.943 [main] DEBUG com.orangehrm.config.ConfigManager - Config [base.url] resolved from base config
+2026-04-02 09:45:12.943 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.username] resolved from base config
+2026-04-02 09:45:12.944 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.password] resolved from base config
+2026-04-02 09:45:12.946 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.username] using default: 
+2026-04-02 09:45:12.946 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.username] is not set in any source
+2026-04-02 09:45:12.946 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.password] using default: 
+2026-04-02 09:45:12.946 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.password] is not set in any source
+2026-04-02 09:45:12.946 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:12.946 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:12.946 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.explicit] resolved from base config
+2026-04-02 09:45:12.947 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:45:12.947 [main] INFO  c.orangehrm.config.EnvironmentConfig -   environment         : dev
+2026-04-02 09:45:12.947 [main] INFO  c.orangehrm.config.EnvironmentConfig -   base.url            : https://opensource-demo.orangehrmlive.com
+2026-04-02 09:45:12.947 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser             : chrome
+2026-04-02 09:45:12.947 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser.headless    : true
+2026-04-02 09:45:12.947 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.username      : Admin
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.password      : a***3
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.username        : 
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.password        : ***
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.configured       : false
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.explicit       : 15
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.pageLoad       : 30
+2026-04-02 09:45:12.948 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 09:45:12.948 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:12.948 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Verify database connectivity
+2026-04-02 09:45:12.949 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert, @smoke]
+2026-04-02 09:45:12.949 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:12.949 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:12.950 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:12.950 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:12.953 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:12.953 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:12.953 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:12.959 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Verify database connectivity
+2026-04-02 09:45:12.960 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:12.960 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Verify database connectivity [PASSED/SKIPPED]
+2026-04-02 09:45:12.960 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.019 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.019 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data insertion into a table
+2026-04-02 09:45:13.019 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert]
+2026-04-02 09:45:13.019 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.020 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.020 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.020 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.021 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.021 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.021 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.026 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data insertion into a table
+2026-04-02 09:45:13.026 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.026 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data insertion into a table [PASSED/SKIPPED]
+2026-04-02 09:45:13.026 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.056 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.056 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate inserted record count
+2026-04-02 09:45:13.056 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert]
+2026-04-02 09:45:13.057 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.057 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.057 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.057 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.057 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.057 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.057 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.060 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate inserted record count
+2026-04-02 09:45:13.060 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.060 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate inserted record count [PASSED/SKIPPED]
+2026-04-02 09:45:13.060 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.075 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.075 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate insertion with query verification
+2026-04-02 09:45:13.075 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert]
+2026-04-02 09:45:13.075 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.075 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.075 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.075 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.076 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.076 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.076 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.078 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate insertion with query verification
+2026-04-02 09:45:13.078 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.079 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate insertion with query verification [PASSED/SKIPPED]
+2026-04-02 09:45:13.079 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.094 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.094 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data update in a table
+2026-04-02 09:45:13.094 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-update]
+2026-04-02 09:45:13.094 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.094 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.094 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.094 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.094 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.095 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.095 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.098 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data update in a table
+2026-04-02 09:45:13.098 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.098 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data update in a table [PASSED/SKIPPED]
+2026-04-02 09:45:13.098 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.113 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.113 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate update does not affect unrelated records
+2026-04-02 09:45:13.113 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-update]
+2026-04-02 09:45:13.113 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.113 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.113 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.113 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.114 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.114 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.114 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.117 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate update does not affect unrelated records
+2026-04-02 09:45:13.117 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.117 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate update does not affect unrelated records [PASSED/SKIPPED]
+2026-04-02 09:45:13.117 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.128 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.128 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data deletion from a table
+2026-04-02 09:45:13.128 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-delete]
+2026-04-02 09:45:13.128 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.128 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.128 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.128 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.129 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.129 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.129 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.132 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data deletion from a table
+2026-04-02 09:45:13.132 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.132 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data deletion from a table [PASSED/SKIPPED]
+2026-04-02 09:45:13.132 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.147 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.148 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion with query verification
+2026-04-02 09:45:13.148 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-delete]
+2026-04-02 09:45:13.148 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.148 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.148 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.149 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.149 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.149 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.149 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.154 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion with query verification
+2026-04-02 09:45:13.154 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.154 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion with query verification [PASSED/SKIPPED]
+2026-04-02 09:45:13.154 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.167 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.167 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion does not affect unrelated records
+2026-04-02 09:45:13.167 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-delete]
+2026-04-02 09:45:13.167 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:45:13.167 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.167 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.167 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 09:45:13.168 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:45:13.168 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:45:13.168 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 09:45:13.171 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion does not affect unrelated records
+2026-04-02 09:45:13.171 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:45:13.171 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion does not affect unrelated records [PASSED/SKIPPED]
+2026-04-02 09:45:13.171 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================

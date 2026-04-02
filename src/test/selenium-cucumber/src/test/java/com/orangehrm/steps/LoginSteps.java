@@ -20,6 +20,11 @@ import static org.junit.Assert.*;
  * Step definitions for login-related Cucumber scenarios.
  * Covers admin login, credential validation, empty field validation,
  * invalid credentials, CSRF, branding, and disabled/terminated user flows.
+ *
+ * <h3>Thread safety</h3>
+ * <p>Each scenario gets a fresh instance of this class via Cucumber
+ * PicoContainer DI. The {@link BasePage} instance and all mutable state
+ * are per-scenario, so parallel execution is safe.</p>
  */
 // PUBLIC_INTERFACE
 public class LoginSteps {
@@ -218,19 +223,13 @@ public class LoginSteps {
     @Then("the {string} field should display {string} validation error")
     public void theFieldShouldDisplayValidationError(String fieldName, String expectedError) {
         LOG.info("Step: Verifying '{}' field displays '{}' validation error", fieldName, expectedError);
-        try {
-            // Wait a moment for validation to trigger
-            Thread.sleep(500);
-            String actualError = basePage.getInputValidationError(fieldName);
-            assertTrue(
-                    String.format("Expected validation error '%s' for field '%s', but got: '%s'",
-                            expectedError, fieldName, actualError),
-                    actualError.contains(expectedError));
-            LOG.info("Validation error confirmed: '{}' on field '{}'", actualError, fieldName);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException("Interrupted while waiting for validation", e);
-        }
+        // Use explicit wait for validation error instead of Thread.sleep
+        String actualError = basePage.waitForValidationError(fieldName, expectedError, 5);
+        assertTrue(
+                String.format("Expected validation error '%s' for field '%s', but got: '%s'",
+                        expectedError, fieldName, actualError),
+                actualError.contains(expectedError));
+        LOG.info("Validation error confirmed: '{}' on field '{}'", actualError, fieldName);
     }
 
     @Then("the login page should display an {string} error message")

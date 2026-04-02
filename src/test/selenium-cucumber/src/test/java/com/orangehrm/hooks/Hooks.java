@@ -19,9 +19,17 @@ import java.util.Collection;
  * Handles driver initialisation, configuration logging, screenshot capture
  * on failure, and teardown.
  *
+ * <h3>Thread safety</h3>
+ * <p>Cucumber PicoContainer creates a new instance of this class for each
+ * scenario. The {@code configLogged} guard uses double-checked locking
+ * (volatile + synchronized) which is safe for multi-threaded execution.
+ * WebDriver lifecycle is managed via {@link DriverFactory}'s ThreadLocal,
+ * so parallel scenarios never share a browser instance.</p>
+ *
  * <h3>Observability</h3>
  * <p>On the first scenario of a run, the full configuration summary is logged
- * so that CI logs always contain the runtime settings used.</p>
+ * so that CI logs always contain the runtime settings used. Thread names are
+ * included in log messages to aid parallel execution debugging.</p>
  *
  * <h3>Database-only scenario optimisation</h3>
  * <p>For scenarios tagged {@code @database} where the database is not
@@ -36,6 +44,9 @@ public class Hooks {
 
     /** Guard flag so that the config summary is logged only once per JVM. */
     private static volatile boolean configLogged = false;
+
+    /** Track whether WebDriver was initialised for this scenario. */
+    private boolean driverInitialised = false;
 
     /**
      * Before each scenario: log config (once), then initialise a fresh
@@ -52,8 +63,9 @@ public class Hooks {
     public void setUp(Scenario scenario) {
         logConfigOnce();
 
+        String threadName = Thread.currentThread().getName();
         LOG.info("===================================================");
-        LOG.info("STARTING SCENARIO: {}", scenario.getName());
+        LOG.info("STARTING SCENARIO: {} [thread={}]", scenario.getName(), threadName);
         LOG.info("Tags: {}", scenario.getSourceTagNames());
         LOG.info("Environment: {}", ConfigManager.getActiveEnvironment());
         LOG.info("===================================================");
@@ -62,10 +74,12 @@ public class Hooks {
         // These scenarios will be skipped by assumeTrue in the step definition anyway.
         if (isDatabaseOnlyScenario(scenario) && !ConfigManager.isDatabaseConfigured()) {
             LOG.info("Database not configured — skipping WebDriver init for database-only scenario");
+            driverInitialised = false;
             return;
         }
 
         DriverFactory.initDriver();
+        driverInitialised = true;
     }
 
     /**
@@ -78,25 +92,30 @@ public class Hooks {
      */
     @After(order = 0)
     public void tearDown(Scenario scenario) {
+        String threadName = Thread.currentThread().getName();
         try {
             if (scenario.isFailed()) {
-                LOG.error("SCENARIO FAILED: {}", scenario.getName());
-                captureScreenshot(scenario);
+                LOG.error("SCENARIO FAILED: {} [thread={}]", scenario.getName(), threadName);
+                if (driverInitialised) {
+                    captureScreenshot(scenario);
+                }
             } else {
-                LOG.info("SCENARIO PASSED/SKIPPED: {}", scenario.getName());
+                LOG.info("SCENARIO PASSED/SKIPPED: {} [thread={}]", scenario.getName(), threadName);
             }
         } finally {
             // quitDriver() already handles null driver gracefully (no-op if not init'd)
             DriverFactory.quitDriver();
+            driverInitialised = false;
             LOG.info("===================================================");
-            LOG.info("FINISHED SCENARIO: {} [{}]", scenario.getName(),
-                    scenario.isFailed() ? "FAILED" : "PASSED/SKIPPED");
+            LOG.info("FINISHED SCENARIO: {} [{}] [thread={}]", scenario.getName(),
+                    scenario.isFailed() ? "FAILED" : "PASSED/SKIPPED", threadName);
             LOG.info("===================================================");
         }
     }
 
     /**
      * Log the full configuration summary exactly once per test run.
+     * Uses double-checked locking with volatile for thread safety.
      */
     private void logConfigOnce() {
         if (!configLogged) {

@@ -10,9 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -21,12 +24,19 @@ import static org.junit.Assert.*;
  * Step definitions for dashboard-related Cucumber scenarios.
  * Covers widget visibility, chart rendering, quick launch,
  * permission-based visibility, and API endpoint checks.
+ *
+ * <h3>Thread safety</h3>
+ * <p>Each scenario gets a fresh instance via Cucumber PicoContainer.
+ * No shared mutable state across threads.</p>
  */
 // PUBLIC_INTERFACE
 public class DashboardSteps {
 
     private static final Logger LOG = LoggerFactory.getLogger(DashboardSteps.class);
     private final BasePage basePage = new BasePage();
+
+    /** Short timeout for widget visibility checks to avoid long waits on optional widgets. */
+    private static final int WIDGET_WAIT_SECONDS = 8;
 
     // ─── When Steps ───
 
@@ -59,7 +69,6 @@ public class DashboardSteps {
     public void theWidgetShouldBeVisible(String widgetName) {
         LOG.info("Step: Verifying '{}' widget is visible", widgetName);
         try {
-            // OrangeHRM dashboard widgets are identified by their heading text
             boolean found = isWidgetVisible(widgetName);
             assertTrue("Widget '" + widgetName + "' should be visible on dashboard", found);
             LOG.info("Widget '{}' is visible", widgetName);
@@ -73,7 +82,6 @@ public class DashboardSteps {
     public void theQuickLaunchWidgetShouldDisplayShortcutIcons() {
         LOG.info("Step: Verifying Quick Launch widget shortcut icons");
         try {
-            // Quick Launch uses button/icon elements inside the widget
             boolean quickLaunchVisible = isWidgetVisible("Quick Launch");
             assertTrue("Quick Launch widget should be visible", quickLaunchVisible);
             LOG.info("Quick Launch widget with shortcuts verified");
@@ -90,7 +98,6 @@ public class DashboardSteps {
             List<WebElement> shortcuts = DriverFactory.getDriver().findElements(
                     By.cssSelector(".orangehrm-quick-launch-card, .quick-launch-card, a[href]"));
             LOG.info("Found {} shortcut elements to verify", shortcuts.size());
-            // Verify shortcuts exist (they may be links or clickable cards)
             assertFalse("Quick Launch should have at least one shortcut", shortcuts.isEmpty());
             LOG.info("All shortcuts have navigation targets");
         } catch (Exception e) {
@@ -111,8 +118,8 @@ public class DashboardSteps {
         try {
             boolean found = isWidgetVisible(chartName);
             if (!found) {
-                // Charts may render inside canvas elements
-                found = basePage.isElementVisible(By.cssSelector("canvas"), 5);
+                // Charts may render inside canvas elements — use explicit wait
+                found = basePage.isElementVisible(By.cssSelector("canvas"), WIDGET_WAIT_SECONDS);
             }
             assertTrue("Chart '" + chartName + "' should be visible", found);
             LOG.info("Chart '{}' is visible", chartName);
@@ -205,23 +212,39 @@ public class DashboardSteps {
 
     /**
      * Check if a widget with the given heading text is visible on the page.
+     * Uses an explicit wait to allow time for dashboard widgets to render
+     * after the page load event, avoiding race conditions.
      *
      * @param widgetName the widget heading text
      * @return true if found and visible
      */
     private boolean isWidgetVisible(String widgetName) {
         try {
+            // Wait for the page content to be present before searching for widgets
+            basePage.waitForVisible(By.cssSelector(BasePage.OXD_PAGE_CONTEXT), WIDGET_WAIT_SECONDS);
+
             // Search for widget by heading/title text within the dashboard
-            List<WebElement> headings = DriverFactory.getDriver().findElements(
-                    By.xpath("//*[contains(@class,'orangehrm-dashboard-widget') or contains(@class,'oxd-sheet')]" +
-                            "//*[contains(normalize-space(),'" + widgetName + "')]"));
-            if (!headings.isEmpty()) {
+            By widgetLocator = By.xpath(
+                    "//*[contains(@class,'orangehrm-dashboard-widget') or contains(@class,'oxd-sheet')]"
+                            + "//*[contains(normalize-space(),'" + widgetName + "')]");
+
+            // Use a short explicit wait to let async-rendered widgets appear
+            try {
+                new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(WIDGET_WAIT_SECONDS))
+                        .until(ExpectedConditions.presenceOfElementLocated(widgetLocator));
                 return true;
+            } catch (Exception ignored) {
+                // Fallback: broader search for any element containing the widget name
             }
-            // Broader fallback: any element containing the widget name
-            headings = DriverFactory.getDriver().findElements(
-                    By.xpath("//*[contains(normalize-space(),'" + widgetName + "')]"));
-            return !headings.isEmpty();
+
+            By broadLocator = By.xpath("//*[contains(normalize-space(),'" + widgetName + "')]");
+            try {
+                new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(3))
+                        .until(ExpectedConditions.presenceOfElementLocated(broadLocator));
+                return true;
+            } catch (Exception ignored) {
+                return false;
+            }
         } catch (Exception e) {
             LOG.debug("Widget '{}' search exception: {}", widgetName, e.getMessage());
             return false;
