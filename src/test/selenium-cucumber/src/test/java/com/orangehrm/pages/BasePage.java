@@ -429,8 +429,8 @@ public class BasePage {
 
     /**
      * Wait for a validation error to appear on the specified field.
-     * This replaces the anti-pattern of using {@code Thread.sleep} before
-     * checking validation messages.
+     * Uses polling via {@link FluentWait} instead of {@code Thread.sleep}
+     * to avoid hardcoded delays and improve reliability.
      *
      * @param labelText    the label text of the input group
      * @param expectedText the expected error text fragment
@@ -441,23 +441,24 @@ public class BasePage {
     // PUBLIC_INTERFACE
     public String waitForValidationError(String labelText, String expectedText, int timeoutSec) {
         LOG.debug("Waiting for validation error on '{}' containing '{}'", labelText, expectedText);
-        long deadline = System.currentTimeMillis() + (timeoutSec * 1000L);
-        String lastError = "";
-        while (System.currentTimeMillis() < deadline) {
-            lastError = getInputValidationError(labelText);
-            if (!lastError.isEmpty() && lastError.contains(expectedText)) {
-                LOG.debug("Validation error found: '{}'", lastError);
-                return lastError;
-            }
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                break;
-            }
+        final String[] lastError = {""};
+        try {
+            new FluentWait<>(DriverFactory.getDriver())
+                    .withTimeout(Duration.ofSeconds(timeoutSec))
+                    .pollingEvery(POLL_INTERVAL)
+                    .ignoring(NoSuchElementException.class)
+                    .ignoring(StaleElementReferenceException.class)
+                    .until(driver -> {
+                        lastError[0] = getInputValidationError(labelText);
+                        return !lastError[0].isEmpty() && lastError[0].contains(expectedText);
+                    });
+            LOG.debug("Validation error found: '{}'", lastError[0]);
+        } catch (TimeoutException e) {
+            LOG.debug("Validation error '{}' not found on '{}' within {}s — returning last seen: '{}'",
+                    expectedText, labelText, timeoutSec, lastError[0]);
         }
         // Return whatever was last seen (may be empty) — let the caller assert
-        return lastError;
+        return lastError[0];
     }
 
     /**

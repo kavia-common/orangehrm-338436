@@ -1,21 +1,16 @@
 package com.orangehrm.steps;
 
-import com.orangehrm.config.ConfigManager;
 import com.orangehrm.driver.DriverFactory;
 import com.orangehrm.pages.BasePage;
+import com.orangehrm.utils.WaitUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -24,6 +19,11 @@ import static org.junit.Assert.*;
  * Step definitions for dashboard-related Cucumber scenarios.
  * Covers widget visibility, chart rendering, quick launch,
  * permission-based visibility, and API endpoint checks.
+ *
+ * <h3>Flow name: DashboardStepFlow</h3>
+ * <p>All dashboard-related Gherkin steps. Widget visibility checks use
+ * {@link WaitUtils} for explicit polling instead of creating local
+ * WebDriverWait instances.</p>
  *
  * <h3>Thread safety</h3>
  * <p>Each scenario gets a fresh instance via Cucumber PicoContainer.
@@ -54,7 +54,7 @@ public class DashboardSteps {
     public void theDashboardPageShouldLoadSuccessfully() {
         LOG.info("Step: Verifying dashboard page loaded successfully");
         try {
-            basePage.waitForVisible(By.cssSelector(BasePage.OXD_PAGE_CONTEXT));
+            WaitUtils.forVisible(By.cssSelector(BasePage.OXD_PAGE_CONTEXT));
             String currentUrl = basePage.getCurrentUrl();
             assertTrue("Expected dashboard URL, but was: " + currentUrl,
                     currentUrl.contains("dashboard"));
@@ -197,7 +197,7 @@ public class DashboardSteps {
     public void theUserShouldBeRedirectedToTheLoginPage(String expectedPath) {
         LOG.info("Step: Verifying redirect to login page '{}'", expectedPath);
         try {
-            basePage.waitForUrlContains("login");
+            WaitUtils.forUrlContains("login");
             String currentUrl = basePage.getCurrentUrl();
             assertTrue("Expected URL to contain 'login', but was: " + currentUrl,
                     currentUrl.contains("login"));
@@ -212,8 +212,8 @@ public class DashboardSteps {
 
     /**
      * Check if a widget with the given heading text is visible on the page.
-     * Uses an explicit wait to allow time for dashboard widgets to render
-     * after the page load event, avoiding race conditions.
+     * Uses {@link WaitUtils} for explicit polling to allow time for dashboard
+     * widgets to render after the page load event, avoiding race conditions.
      *
      * @param widgetName the widget heading text
      * @return true if found and visible
@@ -221,17 +221,16 @@ public class DashboardSteps {
     private boolean isWidgetVisible(String widgetName) {
         try {
             // Wait for the page content to be present before searching for widgets
-            basePage.waitForVisible(By.cssSelector(BasePage.OXD_PAGE_CONTEXT), WIDGET_WAIT_SECONDS);
+            WaitUtils.forVisible(By.cssSelector(BasePage.OXD_PAGE_CONTEXT), WIDGET_WAIT_SECONDS);
 
             // Search for widget by heading/title text within the dashboard
             By widgetLocator = By.xpath(
                     "//*[contains(@class,'orangehrm-dashboard-widget') or contains(@class,'oxd-sheet')]"
                             + "//*[contains(normalize-space(),'" + widgetName + "')]");
 
-            // Use a short explicit wait to let async-rendered widgets appear
+            // Use WaitUtils for explicit wait to let async-rendered widgets appear
             try {
-                new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(WIDGET_WAIT_SECONDS))
-                        .until(ExpectedConditions.presenceOfElementLocated(widgetLocator));
+                WaitUtils.forPresence(widgetLocator);
                 return true;
             } catch (Exception ignored) {
                 // Fallback: broader search for any element containing the widget name
@@ -239,8 +238,7 @@ public class DashboardSteps {
 
             By broadLocator = By.xpath("//*[contains(normalize-space(),'" + widgetName + "')]");
             try {
-                new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(3))
-                        .until(ExpectedConditions.presenceOfElementLocated(broadLocator));
+                WaitUtils.forVisible(broadLocator, 3);
                 return true;
             } catch (Exception ignored) {
                 return false;

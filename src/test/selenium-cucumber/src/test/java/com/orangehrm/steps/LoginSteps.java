@@ -3,6 +3,8 @@ package com.orangehrm.steps;
 import com.orangehrm.config.ConfigManager;
 import com.orangehrm.driver.DriverFactory;
 import com.orangehrm.pages.BasePage;
+import com.orangehrm.utils.NavigationHelper;
+import com.orangehrm.utils.WaitUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +12,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,11 @@ import static org.junit.Assert.*;
  * Step definitions for login-related Cucumber scenarios.
  * Covers admin login, credential validation, empty field validation,
  * invalid credentials, CSRF, branding, and disabled/terminated user flows.
+ *
+ * <h3>Flow name: LoginStepFlow</h3>
+ * <p>All login-related Gherkin steps are handled here. Actual login
+ * orchestration is delegated to {@link NavigationHelper} to ensure a
+ * single canonical login implementation across the suite.</p>
  *
  * <h3>Thread safety</h3>
  * <p>Each scenario gets a fresh instance of this class via Cucumber
@@ -40,7 +46,7 @@ public class LoginSteps {
         try {
             WebDriver driver = DriverFactory.getDriver();
             driver.get(ConfigManager.getBaseUrl());
-            basePage.waitForVisible(By.cssSelector("body"), 20);
+            WaitUtils.forVisible(By.cssSelector("body"), 20);
             LOG.info("Application is accessible");
         } catch (Exception e) {
             LOG.error("Application is NOT accessible: {}", e.getMessage());
@@ -65,16 +71,14 @@ public class LoginSteps {
     @Given("the admin user is logged in")
     public void theAdminUserIsLoggedIn() {
         LOG.info("Step: Logging in as admin user");
-        performLogin(ConfigManager.getAdminUsername(), ConfigManager.getAdminPassword());
-        basePage.waitForUrlContains("dashboard");
+        NavigationHelper.loginAsAdmin();
         LOG.info("Admin user logged in successfully");
     }
 
     @Given("an ESS user is logged in")
     public void anESSUserIsLoggedIn() {
         LOG.info("Step: Logging in as ESS user");
-        performLogin(ConfigManager.getEssUsername(), ConfigManager.getEssPassword());
-        basePage.waitForUrlContains("dashboard");
+        NavigationHelper.loginAsEss();
         LOG.info("ESS user logged in successfully");
     }
 
@@ -93,15 +97,13 @@ public class LoginSteps {
     @Given("the user is on the page {string}")
     public void theUserIsOnThePage(String path) {
         LOG.info("Step: Navigating to page '{}'", path);
-        basePage.navigateTo(path);
-        basePage.waitForPageLoad();
+        NavigationHelper.navigateToPage(path);
     }
 
     @Given("no user is logged in")
     public void noUserIsLoggedIn() {
         LOG.info("Step: Ensuring no user is logged in (clearing cookies)");
-        WebDriver driver = DriverFactory.getDriver();
-        driver.manage().deleteAllCookies();
+        NavigationHelper.clearSession();
         LOG.info("All cookies cleared");
     }
 
@@ -154,8 +156,7 @@ public class LoginSteps {
     @When("the disabled user attempts to log in with valid credentials")
     public void theDisabledUserAttemptsToLogInWithValidCredentials() {
         LOG.info("Step: Attempting login as disabled user");
-        basePage.navigateTo("/auth/login");
-        basePage.waitForVisible(By.cssSelector(BasePage.OXD_FORM));
+        NavigationHelper.navigateToLoginPage();
         // Use placeholder credentials for disabled user scenario
         theUserEntersUsernameAndPassword("DisabledUser", "DisabledPass@123");
         basePage.clickButtonByText("Login");
@@ -164,8 +165,7 @@ public class LoginSteps {
     @When("the terminated employee attempts to log in")
     public void theTerminatedEmployeeAttemptsToLogIn() {
         LOG.info("Step: Attempting login as terminated employee");
-        basePage.navigateTo("/auth/login");
-        basePage.waitForVisible(By.cssSelector(BasePage.OXD_FORM));
+        NavigationHelper.navigateToLoginPage();
         theUserEntersUsernameAndPassword("TerminatedUser", "TermPass@123");
         basePage.clickButtonByText("Login");
     }
@@ -173,14 +173,14 @@ public class LoginSteps {
     @When("the session times out")
     public void theSessionTimesOut() {
         LOG.info("Step: Simulating session timeout by clearing cookies");
-        DriverFactory.getDriver().manage().deleteAllCookies();
+        NavigationHelper.clearSession();
     }
 
     @When("the user is redirected to the login page")
     public void theUserIsRedirectedToTheLoginPage() {
         LOG.info("Step: Navigating to trigger redirect to login");
         basePage.navigateTo("/dashboard/index");
-        basePage.waitForUrlContains("login");
+        WaitUtils.forUrlContains("login");
     }
 
     @When("the user logs in again with valid credentials")
@@ -209,7 +209,7 @@ public class LoginSteps {
     public void theUserShouldBeRedirectedToTheDashboard(String expectedPath) {
         LOG.info("Step: Verifying redirect to dashboard '{}'", expectedPath);
         try {
-            basePage.waitForUrlContains("dashboard");
+            WaitUtils.forUrlContains("dashboard");
             String currentUrl = basePage.getCurrentUrl();
             assertTrue("Expected URL to contain 'dashboard', but was: " + currentUrl,
                     currentUrl.contains("dashboard"));
@@ -223,7 +223,7 @@ public class LoginSteps {
     @Then("the {string} field should display {string} validation error")
     public void theFieldShouldDisplayValidationError(String fieldName, String expectedError) {
         LOG.info("Step: Verifying '{}' field displays '{}' validation error", fieldName, expectedError);
-        // Use explicit wait for validation error instead of Thread.sleep
+        // Use explicit polling-based wait for validation error instead of Thread.sleep
         String actualError = basePage.waitForValidationError(fieldName, expectedError, 5);
         assertTrue(
                 String.format("Expected validation error '%s' for field '%s', but got: '%s'",
@@ -236,7 +236,7 @@ public class LoginSteps {
     public void theLoginPageShouldDisplayAnErrorMessage(String expectedMessage) {
         LOG.info("Step: Verifying login error message contains '{}'", expectedMessage);
         try {
-            WebElement alert = basePage.waitForVisible(By.cssSelector(BasePage.OXD_ALERT), 10);
+            WebElement alert = WaitUtils.forVisible(By.cssSelector(BasePage.OXD_ALERT), 10);
             String alertText = alert.getText();
             assertTrue(
                     String.format("Expected error message containing '%s', but got: '%s'",
@@ -279,7 +279,7 @@ public class LoginSteps {
         LOG.info("Step: POST redirect verification for '{}' (implicit – browser follows redirect)", endpoint);
         // In Selenium, we can't intercept network calls directly;
         // we verify the end result: user lands on dashboard
-        basePage.waitForUrlContains("dashboard");
+        WaitUtils.forUrlContains("dashboard");
         LOG.info("Redirect from '{}' confirmed by landing on dashboard", endpoint);
     }
 
@@ -324,7 +324,7 @@ public class LoginSteps {
     @Then("the CSRF token should be included in the POST request to {string}")
     public void theCSRFTokenShouldBeIncludedInThePOSTRequestTo(String endpoint) {
         LOG.info("Step: CSRF token in POST to '{}' (verified by successful login flow)", endpoint);
-        basePage.waitForUrlContains("dashboard");
+        WaitUtils.forUrlContains("dashboard");
         LOG.info("CSRF token was included (login succeeded, which requires valid CSRF)");
     }
 
@@ -353,7 +353,7 @@ public class LoginSteps {
     @Then("the user should be redirected back to {string}")
     public void theUserShouldBeRedirectedBackTo(String expectedPath) {
         LOG.info("Step: Verifying redirect back to '{}'", expectedPath);
-        basePage.waitForUrlContains(expectedPath);
+        WaitUtils.forUrlContains(expectedPath);
         assertTrue("Expected URL to contain: " + expectedPath,
                 basePage.getCurrentUrl().contains(expectedPath));
         LOG.info("Successfully redirected back to: {}", expectedPath);
@@ -364,29 +364,6 @@ public class LoginSteps {
         LOG.info("Step: Re-logging in with username '{}'", username);
         basePage.waitForVisible(By.cssSelector(BasePage.OXD_FORM));
         theUserEntersUsernameAndPassword(username, password);
-        basePage.clickButtonByText("Login");
-    }
-
-    // ─── Helper Methods ───
-
-    /**
-     * Perform a complete login flow.
-     *
-     * @param username the username
-     * @param password the password
-     */
-    private void performLogin(String username, String password) {
-        basePage.navigateTo("/auth/login");
-        basePage.waitForVisible(By.cssSelector(BasePage.OXD_FORM));
-
-        WebElement usernameInput = basePage.findOxdInputByLabel("Username");
-        usernameInput.clear();
-        usernameInput.sendKeys(username);
-
-        WebElement passwordInput = basePage.findOxdInputByLabel("Password");
-        passwordInput.clear();
-        passwordInput.sendKeys(password);
-
         basePage.clickButtonByText("Login");
     }
 }

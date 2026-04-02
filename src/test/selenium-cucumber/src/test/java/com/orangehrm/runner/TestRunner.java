@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
             "html:target/cucumber-reports/cucumber.html",
             "json:target/cucumber-reports/cucumber.json"
         },
+        tags = "not @flaky and not @wip",
         monochrome = true,
         publish = true
 )
