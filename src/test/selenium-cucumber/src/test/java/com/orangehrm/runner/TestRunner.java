@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"com.orangehrm.steps", "com.orangehrm.hooks"},
+        glue = {"com.orangehrm.steps", "com.orangehrm.hooks", "com.orangehrm.db"},
         plugin = {
             "pretty",
             "html:target/cucumber-reports/cucumber.html",
