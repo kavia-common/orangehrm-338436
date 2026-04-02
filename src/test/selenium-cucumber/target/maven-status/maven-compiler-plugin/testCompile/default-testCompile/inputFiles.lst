@@ -5,6 +5,7 @@
 /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/driver/DriverFactory.java
 /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/hooks/Hooks.java
 /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/pages/BasePage.java
+/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/runner/SequentialTestRunner.java
 /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/runner/TestRunner.java
 /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/steps/DashboardSteps.java
 /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/java/com/orangehrm/steps/DatabaseValidationSteps.java

@@ -1,5 +1,6 @@
 com/orangehrm/utils/WaitUtils.class
 com/orangehrm/config/ConfigManager.class
+com/orangehrm/runner/SequentialTestRunner.class
 com/orangehrm/utils/ScenarioTags.class
 com/orangehrm/db/DatabaseException.class
 com/orangehrm/steps/DatabaseValidationSteps.class
