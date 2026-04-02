@@ -1,4 +1,4 @@
-@database @db-validation
+@database @db-validation @sequential
 Feature: Database Validation
   As a QA tester
   I want to validate data operations directly against the OrangeHRM MySQL database
