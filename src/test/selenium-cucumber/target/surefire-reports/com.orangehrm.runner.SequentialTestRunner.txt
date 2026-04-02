@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.orangehrm.runner.SequentialTestRunner
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 9, Time elapsed: 1.957 s -- in com.orangehrm.runner.SequentialTestRunner
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 9, Time elapsed: 3.168 s -- in com.orangehrm.runner.SequentialTestRunner
 Database Validation skipped
 Database Validation skipped
 Database Validation skipped

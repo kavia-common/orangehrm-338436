@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.orangehrm.runner.SequentialTestRunner" time="1.957" tests="9" errors="0" skipped="9" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.orangehrm.runner.SequentialTestRunner" time="3.168" tests="9" errors="0" skipped="9" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="cucumber.execution.parallel.config.fixed.max-pool-size" value="8"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/surefire/surefirebooter-20260402115848356_3.jar /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/surefire 2026-04-02T11-58-48_278-jvmRun1 surefire-20260402115848356_1tmp surefire_0-20260402115848356_2tmp"/>
+    <property name="sun.java.command" value="/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/surefire/surefirebooter-20260402122050793_3.jar /home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/surefire 2026-04-02T12-20-50_527-jvmRun1 surefire-20260402122050793_1tmp surefire_0-20260402122050793_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/test-classes:/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/classes:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-java/4.18.1/selenium-java-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-api/4.18.1/selenium-api-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.18.1/selenium-chrome-driver-4.18.1.jar:/home/kavia/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.18.1/selenium-chromium-driver-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-json/4.18.1/selenium-json-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.18.1/selenium-manager-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v120/4.18.1/selenium-devtools-v120-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v121/4.18.1/selenium-devtools-v121-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v122/4.18.1/selenium-devtools-v122-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.18.1/selenium-devtools-v85-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.18.1/selenium-edge-driver-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.18.1/selenium-firefox-driver-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-http/4.18.1/selenium-http-4.18.1.jar:/home/kavia/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.18.1/selenium-ie-driver-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.18.1/selenium-remote-driver-4.18.1.jar:/home/kavia/.m2/repository/com/google/guava/guava/33.0.0-jre/guava-33.0.0-jre.jar:/home/kavia/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/kavia/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/kavia/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/kavia/.m2/repository/com/google/errorprone/error_prone_annotations/2.23.0/error_prone_annotations-2.23.0.jar:/home/kavia/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/kavia/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.23.1-alpha/opentelemetry-semconv-1.23.1-alpha.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-api/1.35.0/opentelemetry-api-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-context/1.35.0/opentelemetry-context-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.35.0/opentelemetry-exporter-logging-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.35.0/opentelemetry-sdk-common-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.35.0/opentelemetry-sdk-extension-autoconfigure-spi-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.35.0/opentelemetry-sdk-extension-autoconfigure-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-api-events/1.35.0-alpha/opentelemetry-api-events-1.35.0-alpha.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.35.0/opentelemetry-sdk-trace-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-extension-incubator/1.35.0-alpha/opentelemetry-extension-incubator-1.35.0-alpha.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.35.0/opentelemetry-sdk-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.35.0/opentelemetry-sdk-metrics-1.35.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.35.0/opentelemetry-sdk-logs-1.35.0.jar:/home/kavia/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-os/4.18.1/selenium-os-4.18.1.jar:/home/kavia/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.18.1/selenium-safari-driver-4.18.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-support/4.18.1/selenium-support-4.18.1.jar:/home/kavia/.m2/repository/io/github/bonigarcia/webdrivermanager/5.7.0/webdrivermanager-5.7.0.jar:/home/kavia/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java/3.3.5/docker-java-3.3.5.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-core/3.3.5/docker-java-core-3.3.5.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-api/3.3.5/docker-java-api-3.3.5.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/kavia/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.76/bcpkix-jdk18on-1.76.jar:/home/kavia/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.76/bcprov-jdk18on-1.76.jar:/home/kavia/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.76/bcutil-jdk18on-1.76.jar:/home/kavia/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.3.5/docker-java-transport-httpclient5-3.3.5.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-transport/3.3.5/docker-java-transport-3.3.5.jar:/home/kavia/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/kavia/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/kavia/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/kavia/.m2/repository/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/kavia/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/kavia/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/kavia/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/kavia/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/kavia/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/kavia/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/kavia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-junit/7.15.0/cucumber-junit-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-picocontainer/7.15.0/cucumber-picocontainer-7.15.0.jar:/home/kavia/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/kavia/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/kavia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/kavia/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/home/kavia/.m2/repository/ch/qos/logback/logback-classic/1.5.3/logback-classic-1.5.3.jar:/home/kavia/.m2/repository/ch/qos/logback/logback-core/1.5.3/logback-core-1.5.3.jar:/home/kavia/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar:/home/kavia/.m2/repository/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar:/home/kavia/.m2/repository/org/mariadb/jdbc/mariadb-java-client/3.3.3/mariadb-java-client-3.3.3.jar:/home/kavia/.m2/repository/com/github/waffle/waffle-jna/3.3.0/waffle-jna-3.3.0.jar:/home/kavia/.m2/repository/net/java/dev/jna/jna-platform/5.13.0/jna-platform-5.13.0.jar:/home/kavia/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.9.3/caffeine-2.9.3.jar:/home/kavia/.m2/repository/org/checkerframework/checker-qual/3.32.0/checker-qual-3.32.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/surefire/surefirebooter-20260402115848356_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/target/surefire/surefirebooter-20260402122050793_3.jar"/>
     <property name="test.environment" value="dev"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.17+10-Ubuntu-124.04"/>
@@ -65,51 +65,53 @@
     <system-out><![CDATA[
 @database @db-validation @sequential @db-insert @smoke
 Scenario: Verify database connectivity                                    # src/test/resources/features/database-validation.feature:13
-2026-04-02 11:58:49.491 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
-2026-04-02 11:58:49.491 [main] INFO  c.orangehrm.config.EnvironmentConfig -         TEST CONFIGURATION SUMMARY                      
-2026-04-02 11:58:49.491 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
-2026-04-02 11:58:49.492 [main] INFO  com.orangehrm.config.ConfigManager - Loaded configuration from config.properties
-2026-04-02 11:58:49.493 [main] INFO  com.orangehrm.config.ConfigManager - Environment resolved from system property: dev
-2026-04-02 11:58:49.493 [main] INFO  com.orangehrm.config.ConfigManager - ConfigManager initialised -- active environment: [dev]
-2026-04-02 11:58:49.493 [main] DEBUG com.orangehrm.config.ConfigManager - Config [base.url] resolved from base config
-2026-04-02 11:58:49.494 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.username] resolved from base config
-2026-04-02 11:58:49.494 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.password] resolved from base config
-2026-04-02 11:58:49.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.username] using default: 
-2026-04-02 11:58:49.496 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.username] is not set in any source
-2026-04-02 11:58:49.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.password] using default: 
-2026-04-02 11:58:49.496 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.password] is not set in any source
-2026-04-02 11:58:49.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:49.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:49.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.explicit] resolved from base config
-2026-04-02 11:58:49.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
-2026-04-02 11:58:49.497 [main] INFO  c.orangehrm.config.EnvironmentConfig -   environment         : dev
-2026-04-02 11:58:49.497 [main] INFO  c.orangehrm.config.EnvironmentConfig -   base.url            : https://opensource-demo.orangehrmlive.com
-2026-04-02 11:58:49.497 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser             : chrome
-2026-04-02 11:58:49.497 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser.headless    : true
-2026-04-02 11:58:49.497 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.username      : Admin
-2026-04-02 11:58:49.497 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.password      : a***3
-2026-04-02 11:58:49.498 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.username        : 
-2026-04-02 11:58:49.498 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.password        : ***
-2026-04-02 11:58:49.498 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.configured       : false
-2026-04-02 11:58:49.498 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.explicit       : 15
-2026-04-02 11:58:49.498 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.pageLoad       : 30
-2026-04-02 11:58:49.498 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
-2026-04-02 11:58:49.499 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:49.499 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Verify database connectivity [thread=main]
-2026-04-02 11:58:49.499 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert, @smoke]
-2026-04-02 11:58:49.499 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:49.500 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:49.501 [main] DEBUG com.orangehrm.config.ConfigManager - Config [driver.init.retries] resolved from base config
-2026-04-02 11:58:49.501 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=true, thread=main
-2026-04-02 11:58:49.751 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
-2026-04-02 11:58:49.764 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
-2026-04-02 11:58:49.768 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
-2026-04-02 11:58:49.771 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-105472372472808
-2026-04-02 11:58:50.309 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
-2026-04-02 11:58:50.341 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true, thread=main)
-2026-04-02 11:58:50.344 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.345 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.345 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:51.949 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 12:20:51.950 [main] INFO  c.orangehrm.config.EnvironmentConfig -         TEST CONFIGURATION SUMMARY                      
+2026-04-02 12:20:51.950 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 12:20:51.951 [main] INFO  com.orangehrm.config.ConfigManager - Loaded configuration from config.properties
+2026-04-02 12:20:51.952 [main] INFO  com.orangehrm.config.ConfigManager - Environment resolved from system property: dev
+2026-04-02 12:20:51.952 [main] INFO  com.orangehrm.config.ConfigManager - ConfigManager initialised -- active environment: [dev]
+2026-04-02 12:20:51.953 [main] DEBUG com.orangehrm.config.ConfigManager - Config [base.url] resolved from base config
+2026-04-02 12:20:51.953 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.username] resolved from base config
+2026-04-02 12:20:51.953 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.password] resolved from base config
+2026-04-02 12:20:51.954 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.username] using default: 
+2026-04-02 12:20:51.955 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.username] is not set in any source
+2026-04-02 12:20:51.955 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.password] using default: 
+2026-04-02 12:20:51.955 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.password] is not set in any source
+2026-04-02 12:20:51.955 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:51.955 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:51.955 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.explicit] resolved from base config
+2026-04-02 12:20:51.955 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   environment         : dev
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   base.url            : https://opensource-demo.orangehrmlive.com
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser             : chrome
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser.headless    : true
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.username      : Admin
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.password      : a***3
+2026-04-02 12:20:51.956 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.username        : 
+2026-04-02 12:20:51.957 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.password        : ***
+2026-04-02 12:20:51.957 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.configured       : false
+2026-04-02 12:20:51.957 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.explicit       : 15
+2026-04-02 12:20:51.957 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.pageLoad       : 30
+2026-04-02 12:20:51.957 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 12:20:51.957 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:51.957 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Verify database connectivity [thread=main]
+2026-04-02 12:20:51.957 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert, @smoke]
+2026-04-02 12:20:51.957 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:51.958 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:51.959 [main] DEBUG com.orangehrm.config.ConfigManager - Config [driver.init.retries] resolved from base config
+2026-04-02 12:20:51.960 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=true, thread=main
+2026-04-02 12:20:52.549 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:20:52.595 [main] INFO  i.g.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/linux64/chromedriver-linux64.zip
+2026-04-02 12:20:52.921 [main] INFO  i.g.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-linux64.zip
+2026-04-02 12:20:53.100 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:20:53.105 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 12:20:53.109 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-106795709641347
+2026-04-02 12:20:53.937 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:20:53.969 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true, thread=main)
+2026-04-02 12:20:53.972 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:53.973 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:53.973 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -117,16 +119,16 @@ Scenario: Verify database connectivity                                    # src/
 	at ✽.the database connection is configured for the current environment(file:///home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/resources/features/database-validation.feature:8)
 
   Then the database should be accessible                                  # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseShouldBeAccessible()
-2026-04-02 11:58:50.353 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Verify database connectivity [thread=main]
-2026-04-02 11:58:50.353 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver (thread=main)...
-2026-04-02 11:58:50.432 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal (thread=main)
-2026-04-02 11:58:50.432 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.433 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Verify database connectivity [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.433 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:53.979 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Verify database connectivity [thread=main]
+2026-04-02 12:20:53.979 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver (thread=main)...
+2026-04-02 12:20:54.074 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal (thread=main)
+2026-04-02 12:20:54.074 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.074 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Verify database connectivity [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.075 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
-    <system-err><![CDATA[Apr 02, 2026 11:58:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Apr 02, 2026 12:20:53 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 146
-Apr 02, 2026 11:58:50 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 02, 2026 12:20:53 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 146.0.7680.177. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
@@ -135,16 +137,16 @@ WARNING: Unable to find version of CDP to use for 146.0.7680.177. You may need t
     <system-out><![CDATA[
 @database @db-validation @sequential @db-insert
 Scenario: Validate data insertion into a table                                                      # src/test/resources/features/database-validation.feature:17
-2026-04-02 11:58:50.471 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.471 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data insertion into a table [thread=main]
-2026-04-02 11:58:50.471 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
-2026-04-02 11:58:50.471 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.471 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.471 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.471 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.472 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.472 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.472 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.126 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.127 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data insertion into a table [thread=main]
+2026-04-02 12:20:54.127 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
+2026-04-02 12:20:54.127 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.127 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.127 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.127 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.127 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.128 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.128 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                           # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -158,10 +160,10 @@ Scenario: Validate data insertion into a table                                  
   And a record should exist in "ohrm_nationality" where "name" = "TestNationality_Auto"             # com.orangehrm.steps.DatabaseValidationSteps.aRecordShouldExistInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And the value of "name" in "ohrm_nationality" where "id" = "999" should be "TestNationality_Auto" # com.orangehrm.steps.DatabaseValidationSteps.theValueOfColumnInTableShouldBe(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
   And I clean up the record in "ohrm_nationality" where "id" = "999"                                # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
-2026-04-02 11:58:50.475 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data insertion into a table [thread=main]
-2026-04-02 11:58:50.475 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.475 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data insertion into a table [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.475 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.130 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data insertion into a table [thread=main]
+2026-04-02 12:20:54.131 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.131 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data insertion into a table [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.131 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate inserted record count" classname="Database Validation" time="0.0">
@@ -169,16 +171,16 @@ Scenario: Validate data insertion into a table                                  
     <system-out><![CDATA[
 @database @db-validation @sequential @db-insert
 Scenario: Validate inserted record count                                                      # src/test/resources/features/database-validation.feature:28
-2026-04-02 11:58:50.487 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.487 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate inserted record count [thread=main]
-2026-04-02 11:58:50.487 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
-2026-04-02 11:58:50.487 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.487 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.488 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.488 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.488 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.488 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.489 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.144 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.144 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate inserted record count [thread=main]
+2026-04-02 12:20:54.144 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
+2026-04-02 12:20:54.144 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.145 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.145 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.145 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.146 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.146 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.146 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                     # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -190,10 +192,10 @@ Scenario: Validate inserted record count                                        
   When I insert a record into "ohrm_nationality" with values "id=998, name=TestCount_Auto"    # com.orangehrm.steps.DatabaseValidationSteps.iInsertARecordIntoTableWithValues(java.lang.String,java.lang.String)
   Then the count of records in "ohrm_nationality" where "name" = "TestCount_Auto" should be 1 # com.orangehrm.steps.DatabaseValidationSteps.theCountOfRecordsShouldBe(java.lang.String,java.lang.String,java.lang.String,int)
   And I clean up the record in "ohrm_nationality" where "id" = "998"                          # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
-2026-04-02 11:58:50.492 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate inserted record count [thread=main]
-2026-04-02 11:58:50.492 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.492 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate inserted record count [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.492 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.149 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate inserted record count [thread=main]
+2026-04-02 12:20:54.150 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.150 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate inserted record count [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.150 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate insertion with query verification" classname="Database Validation" time="0.0">
@@ -201,16 +203,16 @@ Scenario: Validate inserted record count                                        
     <system-out><![CDATA[
 @database @db-validation @sequential @db-insert
 Scenario: Validate insertion with query verification                                                      # src/test/resources/features/database-validation.feature:37
-2026-04-02 11:58:50.505 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.505 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate insertion with query verification [thread=main]
-2026-04-02 11:58:50.506 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
-2026-04-02 11:58:50.506 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.506 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.506 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.506 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.507 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.507 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.507 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.166 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.167 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate insertion with query verification [thread=main]
+2026-04-02 12:20:54.167 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
+2026-04-02 12:20:54.167 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.167 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.167 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.167 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.168 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.168 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.168 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                                 # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -224,10 +226,10 @@ Scenario: Validate insertion with query verification                            
   Then the query result should not be empty                                                               # com.orangehrm.steps.DatabaseValidationSteps.theQueryResultShouldNotBeEmpty()
   And the query result should contain 1 row(s)
   And I clean up the record in "ohrm_nationality" where "id" = "997"                                      # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
-2026-04-02 11:58:50.509 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate insertion with query verification [thread=main]
-2026-04-02 11:58:50.510 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.510 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate insertion with query verification [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.510 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.172 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate insertion with query verification [thread=main]
+2026-04-02 12:20:54.172 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.172 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate insertion with query verification [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.172 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate data update in a table" classname="Database Validation" time="0.0">
@@ -235,16 +237,16 @@ Scenario: Validate insertion with query verification                            
     <system-out><![CDATA[
 @database @db-validation @sequential @db-update
 Scenario: Validate data update in a table                                                       # src/test/resources/features/database-validation.feature:50
-2026-04-02 11:58:50.522 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.522 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data update in a table [thread=main]
-2026-04-02 11:58:50.522 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-update]
-2026-04-02 11:58:50.522 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.523 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.523 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.523 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.523 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.523 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.524 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.183 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.183 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data update in a table [thread=main]
+2026-04-02 12:20:54.184 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-update]
+2026-04-02 12:20:54.184 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.184 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.184 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.184 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.184 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.184 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.184 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                       # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -262,10 +264,10 @@ Scenario: Validate data update in a table                                       
   And no record should exist in "ohrm_nationality" where "name" = "UpdateTest_Auto"             # com.orangehrm.steps.DatabaseValidationSteps.noRecordShouldExistInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And the value of "name" in "ohrm_nationality" where "id" = "996" should be "UpdatedName_Auto" # com.orangehrm.steps.DatabaseValidationSteps.theValueOfColumnInTableShouldBe(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
   And I clean up the record in "ohrm_nationality" where "id" = "996"                            # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
-2026-04-02 11:58:50.527 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data update in a table [thread=main]
-2026-04-02 11:58:50.527 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.527 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data update in a table [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.527 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.188 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data update in a table [thread=main]
+2026-04-02 12:20:54.188 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.188 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data update in a table [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.188 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate update does not affect unrelated records" classname="Database Validation" time="0.0">
@@ -273,16 +275,16 @@ Scenario: Validate data update in a table                                       
     <system-out><![CDATA[
 @database @db-validation @sequential @db-update
 Scenario: Validate update does not affect unrelated records                              # src/test/resources/features/database-validation.feature:67
-2026-04-02 11:58:50.547 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.547 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate update does not affect unrelated records [thread=main]
-2026-04-02 11:58:50.547 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-update]
-2026-04-02 11:58:50.547 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.547 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.547 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.547 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.548 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.548 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.548 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.197 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.197 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate update does not affect unrelated records [thread=main]
+2026-04-02 12:20:54.197 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-update]
+2026-04-02 12:20:54.197 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.197 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.197 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.198 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.198 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.198 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.198 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -300,10 +302,10 @@ Scenario: Validate update does not affect unrelated records                     
   And no record should exist in "ohrm_nationality" where "name" = "ChangeMe_Auto"        # com.orangehrm.steps.DatabaseValidationSteps.noRecordShouldExistInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And I clean up the record in "ohrm_nationality" where "id" = "994"                     # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And I clean up the record in "ohrm_nationality" where "id" = "995"                     # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
-2026-04-02 11:58:50.551 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate update does not affect unrelated records [thread=main]
-2026-04-02 11:58:50.552 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.552 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate update does not affect unrelated records [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.552 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.201 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate update does not affect unrelated records [thread=main]
+2026-04-02 12:20:54.201 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.201 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate update does not affect unrelated records [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.201 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate data deletion from a table" classname="Database Validation" time="0.0">
@@ -311,16 +313,16 @@ Scenario: Validate update does not affect unrelated records                     
     <system-out><![CDATA[
 @database @db-validation @sequential @db-delete
 Scenario: Validate data deletion from a table                                             # src/test/resources/features/database-validation.feature:86
-2026-04-02 11:58:50.562 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.562 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data deletion from a table [thread=main]
-2026-04-02 11:58:50.562 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
-2026-04-02 11:58:50.562 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.562 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.562 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.562 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.563 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.563 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.563 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.216 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.216 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data deletion from a table [thread=main]
+2026-04-02 12:20:54.216 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
+2026-04-02 12:20:54.217 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.217 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.217 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.217 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.217 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.218 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.218 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                 # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -335,10 +337,10 @@ Scenario: Validate data deletion from a table                                   
   Then the operation should affect 1 row(s)
   And no record should exist in "ohrm_nationality" where "name" = "DeleteMe_Auto"         # com.orangehrm.steps.DatabaseValidationSteps.noRecordShouldExistInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And the count of records in "ohrm_nationality" where "id" = "993" should be 0           # com.orangehrm.steps.DatabaseValidationSteps.theCountOfRecordsShouldBe(java.lang.String,java.lang.String,java.lang.String,int)
-2026-04-02 11:58:50.566 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data deletion from a table [thread=main]
-2026-04-02 11:58:50.566 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.566 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data deletion from a table [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.566 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.220 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data deletion from a table [thread=main]
+2026-04-02 12:20:54.220 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.220 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data deletion from a table [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.220 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate deletion with query verification" classname="Database Validation" time="0.0">
@@ -346,16 +348,16 @@ Scenario: Validate data deletion from a table                                   
     <system-out><![CDATA[
 @database @db-validation @sequential @db-delete
 Scenario: Validate deletion with query verification                                          # src/test/resources/features/database-validation.feature:99
-2026-04-02 11:58:50.575 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.575 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion with query verification [thread=main]
-2026-04-02 11:58:50.575 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
-2026-04-02 11:58:50.575 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.575 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.575 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.575 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.576 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.576 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.576 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.227 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.227 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion with query verification [thread=main]
+2026-04-02 12:20:54.227 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
+2026-04-02 12:20:54.227 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.227 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.227 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.227 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.228 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.228 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.228 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                    # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -370,10 +372,10 @@ Scenario: Validate deletion with query verification                             
   When I delete from "ohrm_nationality" where "id" = "992"                                   # com.orangehrm.steps.DatabaseValidationSteps.iDeleteFromTableWhereCondition(java.lang.String,java.lang.String,java.lang.String)
   And I execute the query "SELECT * FROM ohrm_nationality WHERE id = ?" with parameter "992" # com.orangehrm.steps.DatabaseValidationSteps.iExecuteTheQueryWithParameter(java.lang.String,java.lang.String)
   Then the query result should be empty                                                      # com.orangehrm.steps.DatabaseValidationSteps.theQueryResultShouldBeEmpty()
-2026-04-02 11:58:50.579 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion with query verification [thread=main]
-2026-04-02 11:58:50.579 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.579 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion with query verification [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.579 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.230 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion with query verification [thread=main]
+2026-04-02 12:20:54.230 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.231 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion with query verification [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.231 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
   <testcase name="Validate deletion does not affect unrelated records" classname="Database Validation" time="0.0">
@@ -381,16 +383,16 @@ Scenario: Validate deletion with query verification                             
     <system-out><![CDATA[
 @database @db-validation @sequential @db-delete
 Scenario: Validate deletion does not affect unrelated records                             # src/test/resources/features/database-validation.feature:112
-2026-04-02 11:58:50.591 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.591 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion does not affect unrelated records [thread=main]
-2026-04-02 11:58:50.591 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
-2026-04-02 11:58:50.591 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
-2026-04-02 11:58:50.592 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.592 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.592 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
-2026-04-02 11:58:50.592 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
-2026-04-02 11:58:50.592 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
-2026-04-02 11:58:50.592 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
+2026-04-02 12:20:54.239 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.239 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion does not affect unrelated records [thread=main]
+2026-04-02 12:20:54.239 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
+2026-04-02 12:20:54.239 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:20:54.239 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.239 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.239 [main] INFO  com.orangehrm.hooks.Hooks - Database not configured — skipping WebDriver init for database-only scenario
+2026-04-02 12:20:54.239 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:20:54.239 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 12:20:54.240 [main] WARN  c.o.steps.DatabaseValidationSteps - Database is NOT configured (db.url is empty). Skipping database scenario. To enable, set db.url, db.username, db.password, db.driver in properties or environment variables.
   Given the database connection is configured for the current environment                 # com.orangehrm.steps.DatabaseValidationSteps.theDatabaseConnectionIsConfiguredForTheCurrentEnvironment()
       org.junit.AssumptionViolatedException: Database is not configured — skipping. Set db.url, db.username, db.password, db.driver in properties or environment variables.
 	at org.junit.Assume.assumeTrue(Assume.java:68)
@@ -406,10 +408,10 @@ Scenario: Validate deletion does not affect unrelated records                   
   Then a record should exist in "ohrm_nationality" where "name" = "Survivor_Auto"         # com.orangehrm.steps.DatabaseValidationSteps.aRecordShouldExistInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And no record should exist in "ohrm_nationality" where "name" = "Victim_Auto"           # com.orangehrm.steps.DatabaseValidationSteps.noRecordShouldExistInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
   And I clean up the record in "ohrm_nationality" where "id" = "990"                      # com.orangehrm.steps.DatabaseValidationSteps.iCleanUpTheRecordInTableWhereColumnEquals(java.lang.String,java.lang.String,java.lang.String)
-2026-04-02 11:58:50.596 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion does not affect unrelated records [thread=main]
-2026-04-02 11:58:50.596 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
-2026-04-02 11:58:50.596 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion does not affect unrelated records [PASSED/SKIPPED] [thread=main]
-2026-04-02 11:58:50.596 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.242 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion does not affect unrelated records [thread=main]
+2026-04-02 12:20:54.242 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:20:54.242 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion does not affect unrelated records [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:20:54.242 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 ]]></system-out>
   </testcase>
 </testsuite>

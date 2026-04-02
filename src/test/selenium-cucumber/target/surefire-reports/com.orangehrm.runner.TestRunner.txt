@@ -1,25 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: com.orangehrm.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 112.8 s <<< FAILURE! -- in com.orangehrm.runner.TestRunner
-OrangeHRM Top-Priority Regression Pack.Successful admin login with configured credentials -- Time elapsed: 5.440 s
-OrangeHRM Top-Priority Regression Pack.Login form contains CSRF protection -- Time elapsed: 7.581 s
-OrangeHRM Top-Priority Regression Pack.CSRF token is submitted with login request -- Time elapsed: 4.572 s
-OrangeHRM Top-Priority Regression Pack.Login page displays social media section -- Time elapsed: 2.495 s
-OrangeHRM Top-Priority Regression Pack.XSS prevention in login fields -- Time elapsed: 3.665 s
-OrangeHRM Top-Priority Regression Pack.Session timeout redirects to login -- Time elapsed: 4.622 s
-OrangeHRM Top-Priority Regression Pack.Re-login after session timeout -- Time elapsed: 10.22 s
-OrangeHRM Top-Priority Regression Pack.Unauthenticated access redirects to login -- Time elapsed: 2.936 s
-OrangeHRM Top-Priority Regression Pack.Dashboard page loads all core widgets -- Time elapsed: 6.670 s
-OrangeHRM Top-Priority Regression Pack.Dashboard charts render -- Time elapsed: 7.737 s
-OrangeHRM Top-Priority Regression Pack.Unauthenticated dashboard access redirects to login -- Time elapsed: 18.65 s <<< ERROR!
+Tests run: 17, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 100.1 s <<< FAILURE! -- in com.orangehrm.runner.TestRunner
+OrangeHRM Top-Priority Regression Pack.Successful admin login with configured credentials -- Time elapsed: 6.449 s
+OrangeHRM Top-Priority Regression Pack.Login form contains CSRF protection -- Time elapsed: 8.218 s
+OrangeHRM Top-Priority Regression Pack.CSRF token is submitted with login request -- Time elapsed: 4.731 s
+OrangeHRM Top-Priority Regression Pack.Login page displays social media section -- Time elapsed: 3.099 s
+OrangeHRM Top-Priority Regression Pack.XSS prevention in login fields -- Time elapsed: 5.565 s
+OrangeHRM Top-Priority Regression Pack.Session timeout redirects to login -- Time elapsed: 10.90 s
+OrangeHRM Top-Priority Regression Pack.Re-login after session timeout -- Time elapsed: 7.442 s
+OrangeHRM Top-Priority Regression Pack.Unauthenticated access redirects to login -- Time elapsed: 2.143 s
+OrangeHRM Top-Priority Regression Pack.Dashboard page loads all core widgets -- Time elapsed: 4.945 s
+OrangeHRM Top-Priority Regression Pack.Dashboard charts render -- Time elapsed: 4.979 s
+OrangeHRM Top-Priority Regression Pack.Unauthenticated dashboard access redirects to login -- Time elapsed: 17.55 s <<< ERROR!
 org.openqa.selenium.TimeoutException: 
 Expected condition failed: waiting for visibility of element located by By.cssSelector: .oxd-layout-context (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.177, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: /tmp/chrome-profile-1-10552...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:39841}, goog:processID: 39359, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:39841/devtoo..., se:cdpVersion: 146.0.7680.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a9ffb24d8f0e5bc1aff63505a2f0667c
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.177, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: /tmp/chrome-profile-1-10685...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37123}, goog:processID: 7151, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37123/devtoo..., se:cdpVersion: 146.0.7680.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fb1a81f3f8c26bfec621574e213c06a4
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.orangehrm.pages.BasePage.waitForVisible(BasePage.java:207)
@@ -27,22 +27,9 @@ Session ID: a9ffb24d8f0e5bc1aff63505a2f0667c
 	at com.orangehrm.steps.DashboardSteps.theUserNavigatesToTheDashboard(DashboardSteps.java:47)
 	at ✽.the user navigates to the dashboard "/dashboard/index"(file:///home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/resources/features/regression-pack.feature:101)
 
-OrangeHRM Smoke Pack.Admin user can log in successfully -- Time elapsed: 16.54 s <<< ERROR!
-org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for visibility of element located by By.cssSelector: .oxd-form (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.177, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: /tmp/chrome-profile-1-10554...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:37229}, goog:processID: 39593, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:37229/devtoo..., se:cdpVersion: 146.0.7680.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 12826bfa506e3fbd897597d240fa9997
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.orangehrm.pages.BasePage.waitForVisible(BasePage.java:207)
-	at com.orangehrm.steps.LoginSteps.theUserIsOnTheLoginPage(LoginSteps.java:67)
-	at ✽.the user is on the login page "/auth/login"(file:///home/kavia/workspace/code-generation/orangehrm-338436/src/test/selenium-cucumber/src/test/resources/features/smoke-pack.feature:11)
-
-OrangeHRM Smoke Pack.Login page displays branding elements -- Time elapsed: 3.882 s
-OrangeHRM Smoke Pack.Empty credentials show validation errors -- Time elapsed: 2.810 s
-OrangeHRM Smoke Pack.Invalid credentials show error message -- Time elapsed: 4.432 s
-OrangeHRM Smoke Pack.Dashboard loads after admin login -- Time elapsed: 4.657 s
-OrangeHRM Smoke Pack.Dashboard displays Quick Launch widget -- Time elapsed: 5.785 s
+OrangeHRM Smoke Pack.Admin user can log in successfully -- Time elapsed: 4.076 s
+OrangeHRM Smoke Pack.Login page displays branding elements -- Time elapsed: 3.580 s
+OrangeHRM Smoke Pack.Empty credentials show validation errors -- Time elapsed: 2.933 s
+OrangeHRM Smoke Pack.Invalid credentials show error message -- Time elapsed: 4.089 s
+OrangeHRM Smoke Pack.Dashboard loads after admin login -- Time elapsed: 4.440 s
+OrangeHRM Smoke Pack.Dashboard displays Quick Launch widget -- Time elapsed: 4.907 s
