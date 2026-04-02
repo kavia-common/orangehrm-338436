@@ -917,3 +917,1184 @@
 2026-04-02 12:22:34.379 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
 2026-04-02 12:22:34.379 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Dashboard displays Quick Launch widget [PASSED/SKIPPED] [thread=main]
 2026-04-02 12:22:34.379 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:48.563 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 12:35:48.564 [main] INFO  c.orangehrm.config.EnvironmentConfig -         TEST CONFIGURATION SUMMARY                      
+2026-04-02 12:35:48.565 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 12:35:48.566 [main] INFO  com.orangehrm.config.ConfigManager - Loaded configuration from config.properties
+2026-04-02 12:35:48.567 [main] INFO  com.orangehrm.config.ConfigManager - Environment resolved from system property: dev
+2026-04-02 12:35:48.568 [main] INFO  com.orangehrm.config.ConfigManager - ConfigManager initialised -- active environment: [dev]
+2026-04-02 12:35:48.568 [main] DEBUG com.orangehrm.config.ConfigManager - Config [base.url] resolved from base config
+2026-04-02 12:35:48.568 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.username] resolved from base config
+2026-04-02 12:35:48.568 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.password] resolved from base config
+2026-04-02 12:35:48.571 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.username] using default: 
+2026-04-02 12:35:48.572 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.username] is not set in any source
+2026-04-02 12:35:48.572 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.password] using default: 
+2026-04-02 12:35:48.572 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.password] is not set in any source
+2026-04-02 12:35:48.572 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:48.572 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:48.573 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:48.573 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:48.573 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:48.573 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:48.574 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.explicit] resolved from base config
+2026-04-02 12:35:48.574 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:48.574 [main] INFO  c.orangehrm.config.EnvironmentConfig -   environment         : dev
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   base.url            : https://opensource-demo.orangehrmlive.com
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser             : chrome
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser.headless    : false
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.username      : Admin
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.password      : a***3
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.username        : 
+2026-04-02 12:35:48.575 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.password        : ***
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.configured       : true
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.url              : jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.username         : orangehrm
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.password         : o***m
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.driver           : com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.explicit       : 15
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.pageLoad       : 30
+2026-04-02 12:35:48.576 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 12:35:48.577 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:48.577 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Verify database connectivity [thread=main]
+2026-04-02 12:35:48.577 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert, @smoke]
+2026-04-02 12:35:48.577 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:48.578 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:48.579 [main] DEBUG com.orangehrm.config.ConfigManager - Config [driver.init.retries] resolved from base config
+2026-04-02 12:35:48.580 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:48.881 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:48.899 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:48.903 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:48.907 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107691507970898
+2026-04-02 12:35:49.766 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:50.120 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Verify database connectivity [thread=main]
+2026-04-02 12:35:50.121 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.121 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Verify database connectivity [FAILED] [thread=main]
+2026-04-02 12:35:50.121 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.178 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.178 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data insertion into a table [thread=main]
+2026-04-02 12:35:50.178 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
+2026-04-02 12:35:50.178 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.179 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.179 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.179 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.180 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.180 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.180 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.181 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.181 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.181 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.181 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.181 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.185 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.342 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.345 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.345 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.347 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.347 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.347 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.347 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.347 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.347 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.348 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.348 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.348 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.350 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.371 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.371 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.371 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.373 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.374 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'TestNationality_Auto'
+2026-04-02 12:35:50.374 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.374 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.375 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.375 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.375 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.375 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.375 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.375 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.378 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.387 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.387 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.387 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.387 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'TestNationality_Auto'
+2026-04-02 12:35:50.388 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=999, name=TestNationality_Auto
+2026-04-02 12:35:50.389 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.389 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.389 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.392 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.398 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.398 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.398 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.402 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data insertion into a table [thread=main]
+2026-04-02 12:35:50.402 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.402 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data insertion into a table [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.402 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.420 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.421 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate inserted record count [thread=main]
+2026-04-02 12:35:50.421 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
+2026-04-02 12:35:50.421 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.421 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.421 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.421 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.422 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.422 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.423 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.427 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.427 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.428 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.430 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.430 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.430 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.430 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.430 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.431 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.431 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.431 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.431 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.434 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.436 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.436 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.436 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.437 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.437 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'TestCount_Auto'
+2026-04-02 12:35:50.437 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.437 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.437 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.438 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.438 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.438 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.438 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.438 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.440 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.441 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.442 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.442 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.442 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'TestCount_Auto'
+2026-04-02 12:35:50.443 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=998, name=TestCount_Auto
+2026-04-02 12:35:50.443 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.443 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.443 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.443 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.444 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.444 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.444 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.444 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.444 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.447 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.453 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.453 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.453 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.454 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting count in 'ohrm_nationality' where name = 'TestCount_Auto' is 1
+2026-04-02 12:35:50.454 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT COUNT(*) FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.454 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.455 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.455 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.455 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.455 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.455 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.455 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.459 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.461 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.461 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.461 [main] INFO  com.orangehrm.db.DatabaseUtil - getRowCount — result: 1
+2026-04-02 12:35:50.462 [main] INFO  c.o.steps.DatabaseValidationSteps - Count assertion passed — 1 record(s)
+2026-04-02 12:35:50.463 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Cleaning up record in 'ohrm_nationality' where id = '998'
+2026-04-02 12:35:50.463 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.463 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.463 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.463 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.463 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.463 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.464 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.464 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.464 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.467 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.471 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.472 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.472 [main] INFO  c.o.steps.DatabaseValidationSteps - Cleanup completed — 1 row(s) deleted
+2026-04-02 12:35:50.472 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate inserted record count [thread=main]
+2026-04-02 12:35:50.472 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.473 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate inserted record count [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.473 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.486 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.486 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate insertion with query verification [thread=main]
+2026-04-02 12:35:50.487 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-insert]
+2026-04-02 12:35:50.487 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.487 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.487 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.487 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.487 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.488 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.490 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.491 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.491 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.491 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.491 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.492 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.494 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.496 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.496 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.496 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.496 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.497 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'TestQuery_Auto'
+2026-04-02 12:35:50.497 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.497 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.499 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.500 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.501 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.501 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.501 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'TestQuery_Auto'
+2026-04-02 12:35:50.501 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=997, name=TestQuery_Auto
+2026-04-02 12:35:50.501 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.502 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.502 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.504 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.509 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.509 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.509 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.510 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Executing query: SELECT * FROM ohrm_nationality WHERE name = ? with param: TestQuery_Auto
+2026-04-02 12:35:50.510 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.510 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.512 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.513 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.513 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.513 [main] INFO  c.o.steps.DatabaseValidationSteps - Query returned 1 row(s)
+2026-04-02 12:35:50.514 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting query result is not empty
+2026-04-02 12:35:50.514 [main] INFO  c.o.steps.DatabaseValidationSteps - Query result is not empty — 1 row(s)
+2026-04-02 12:35:50.515 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate insertion with query verification [thread=main]
+2026-04-02 12:35:50.516 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.516 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate insertion with query verification [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.516 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.532 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.532 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data update in a table [thread=main]
+2026-04-02 12:35:50.532 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-update]
+2026-04-02 12:35:50.532 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.532 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.532 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.532 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.532 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.533 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.537 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.537 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.537 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.537 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.537 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.537 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.538 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.538 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.538 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.538 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.538 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.538 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.540 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.543 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.543 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.543 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.543 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.544 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'UpdateTest_Auto'
+2026-04-02 12:35:50.544 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.544 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.547 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.549 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.549 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.549 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.549 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'UpdateTest_Auto'
+2026-04-02 12:35:50.550 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'UpdatedName_Auto'
+2026-04-02 12:35:50.550 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.550 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.553 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.553 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.554 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.554 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.554 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'UpdatedName_Auto'
+2026-04-02 12:35:50.554 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=996, name=UpdateTest_Auto
+2026-04-02 12:35:50.554 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.554 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.555 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.558 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.563 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.564 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.564 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.564 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting record exists in 'ohrm_nationality' where name = 'UpdateTest_Auto'
+2026-04-02 12:35:50.564 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.565 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.568 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.569 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.569 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.569 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.569 [main] INFO  c.o.steps.DatabaseValidationSteps - Record existence confirmed
+2026-04-02 12:35:50.570 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Updating 'ohrm_nationality' — SET name = 'UpdatedName_Auto' WHERE id = '996'
+2026-04-02 12:35:50.570 [main] INFO  com.orangehrm.db.DatabaseUtil - updateRows — table: ohrm_nationality, SET: name = ?, WHERE: id = ?
+2026-04-02 12:35:50.570 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: UPDATE ohrm_nationality SET name = ? WHERE id = ?
+2026-04-02 12:35:50.570 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.570 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.570 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.570 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.571 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.571 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.571 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.574 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.579 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.580 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.580 [main] INFO  c.o.steps.DatabaseValidationSteps - Update completed — 1 row(s) affected
+2026-04-02 12:35:50.583 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data update in a table [thread=main]
+2026-04-02 12:35:50.583 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.583 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data update in a table [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.583 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.599 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.599 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate update does not affect unrelated records [thread=main]
+2026-04-02 12:35:50.599 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-update]
+2026-04-02 12:35:50.599 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.600 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.600 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.600 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.600 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.603 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.603 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.603 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.603 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.603 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.603 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.604 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.604 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.604 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.604 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.604 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.604 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.605 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.607 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.608 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.608 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.608 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.608 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'KeepMe_Auto'
+2026-04-02 12:35:50.608 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.608 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.608 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.608 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.608 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.608 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.609 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.609 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.610 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.611 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.611 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.611 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.611 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'KeepMe_Auto'
+2026-04-02 12:35:50.612 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'ChangeMe_Auto'
+2026-04-02 12:35:50.612 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.612 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.615 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.615 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.616 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.616 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.616 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'ChangeMe_Auto'
+2026-04-02 12:35:50.616 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=994, name=KeepMe_Auto
+2026-04-02 12:35:50.617 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.617 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.617 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.619 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.624 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.624 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.624 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.625 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=995, name=ChangeMe_Auto
+2026-04-02 12:35:50.625 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.625 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.625 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.627 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.631 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.631 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.631 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.631 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Updating 'ohrm_nationality' — SET name = 'Changed_Auto' WHERE id = '995'
+2026-04-02 12:35:50.631 [main] INFO  com.orangehrm.db.DatabaseUtil - updateRows — table: ohrm_nationality, SET: name = ?, WHERE: id = ?
+2026-04-02 12:35:50.631 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: UPDATE ohrm_nationality SET name = ? WHERE id = ?
+2026-04-02 12:35:50.631 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.631 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.631 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.631 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.632 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.632 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.632 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.634 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.638 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.638 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.638 [main] INFO  c.o.steps.DatabaseValidationSteps - Update completed — 1 row(s) affected
+2026-04-02 12:35:50.639 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting record exists in 'ohrm_nationality' where name = 'KeepMe_Auto'
+2026-04-02 12:35:50.639 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.639 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.641 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.642 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.642 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.642 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.642 [main] INFO  c.o.steps.DatabaseValidationSteps - Record existence confirmed
+2026-04-02 12:35:50.642 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting record exists in 'ohrm_nationality' where name = 'Changed_Auto'
+2026-04-02 12:35:50.642 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.642 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.642 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.642 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.642 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.642 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.643 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.643 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.644 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.645 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.645 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.645 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.645 [main] INFO  c.o.steps.DatabaseValidationSteps - Record existence confirmed
+2026-04-02 12:35:50.646 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting no record in 'ohrm_nationality' where name = 'ChangeMe_Auto'
+2026-04-02 12:35:50.646 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.646 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.648 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.649 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.649 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.649 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.649 [main] INFO  c.o.steps.DatabaseValidationSteps - No-record assertion passed
+2026-04-02 12:35:50.649 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Cleaning up record in 'ohrm_nationality' where id = '994'
+2026-04-02 12:35:50.649 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.649 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.649 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.649 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.649 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.650 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.650 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.650 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.650 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.652 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.656 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.657 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.657 [main] INFO  c.o.steps.DatabaseValidationSteps - Cleanup completed — 1 row(s) deleted
+2026-04-02 12:35:50.657 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Cleaning up record in 'ohrm_nationality' where id = '995'
+2026-04-02 12:35:50.657 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.657 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.658 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.660 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.665 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.665 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.665 [main] INFO  c.o.steps.DatabaseValidationSteps - Cleanup completed — 1 row(s) deleted
+2026-04-02 12:35:50.665 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate update does not affect unrelated records [thread=main]
+2026-04-02 12:35:50.665 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.666 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate update does not affect unrelated records [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.666 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.686 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.686 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data deletion from a table [thread=main]
+2026-04-02 12:35:50.686 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
+2026-04-02 12:35:50.686 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.686 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.686 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.686 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.686 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.686 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.687 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.689 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.689 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.689 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.689 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.689 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.691 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.693 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.693 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.693 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.693 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.693 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'DeleteMe_Auto'
+2026-04-02 12:35:50.693 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.693 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.694 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.694 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.694 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.694 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.694 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.694 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.695 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.696 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.696 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.696 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.696 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'DeleteMe_Auto'
+2026-04-02 12:35:50.697 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=993, name=DeleteMe_Auto
+2026-04-02 12:35:50.697 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.697 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.697 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.698 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.703 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.703 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.703 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.704 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting record exists in 'ohrm_nationality' where name = 'DeleteMe_Auto'
+2026-04-02 12:35:50.704 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.704 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.705 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.706 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.706 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.706 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.706 [main] INFO  c.o.steps.DatabaseValidationSteps - Record existence confirmed
+2026-04-02 12:35:50.707 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Deleting from 'ohrm_nationality' WHERE id = '993'
+2026-04-02 12:35:50.707 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.707 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.707 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.709 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.714 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.714 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.714 [main] INFO  c.o.steps.DatabaseValidationSteps - Delete completed — 1 row(s) affected
+2026-04-02 12:35:50.716 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate data deletion from a table [thread=main]
+2026-04-02 12:35:50.716 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.716 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data deletion from a table [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.716 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.725 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.725 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion with query verification [thread=main]
+2026-04-02 12:35:50.725 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
+2026-04-02 12:35:50.725 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.725 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.725 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.725 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.725 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.725 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.725 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.726 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.726 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.726 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.726 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.726 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.726 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.728 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.728 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.728 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.729 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.729 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.729 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.731 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.738 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.741 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.741 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.741 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.741 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'DeleteQuery_Auto'
+2026-04-02 12:35:50.741 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.742 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.745 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.746 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.746 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.746 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.746 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'DeleteQuery_Auto'
+2026-04-02 12:35:50.747 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=992, name=DeleteQuery_Auto
+2026-04-02 12:35:50.747 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.747 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.747 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.749 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.754 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.755 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.755 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.755 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Executing query: SELECT * FROM ohrm_nationality WHERE id = ? with param: 992
+2026-04-02 12:35:50.755 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.755 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.755 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.756 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.756 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.756 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.756 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.756 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.762 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.762 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.762 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.762 [main] INFO  c.o.steps.DatabaseValidationSteps - Query returned 1 row(s)
+2026-04-02 12:35:50.763 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting query result is not empty
+2026-04-02 12:35:50.763 [main] INFO  c.o.steps.DatabaseValidationSteps - Query result is not empty — 1 row(s)
+2026-04-02 12:35:50.763 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Deleting from 'ohrm_nationality' WHERE id = '992'
+2026-04-02 12:35:50.763 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.763 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.763 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.763 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.763 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.763 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.764 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.764 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.764 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.767 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.772 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.772 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.772 [main] INFO  c.o.steps.DatabaseValidationSteps - Delete completed — 1 row(s) affected
+2026-04-02 12:35:50.773 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Executing query: SELECT * FROM ohrm_nationality WHERE id = ? with param: 992
+2026-04-02 12:35:50.773 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.773 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.775 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.776 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.776 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.776 [main] INFO  c.o.steps.DatabaseValidationSteps - Query returned 0 row(s)
+2026-04-02 12:35:50.776 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting query result is empty
+2026-04-02 12:35:50.776 [main] INFO  c.o.steps.DatabaseValidationSteps - Query result is empty — confirmed
+2026-04-02 12:35:50.777 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion with query verification [thread=main]
+2026-04-02 12:35:50.777 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.777 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion with query verification [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.777 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.785 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.785 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion does not affect unrelated records [thread=main]
+2026-04-02 12:35:50.785 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @sequential, @db-delete]
+2026-04-02 12:35:50.785 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.785 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.785 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.785 [main] INFO  com.orangehrm.hooks.Hooks - Database-only scenario — skipping WebDriver init (no browser needed)
+2026-04-02 12:35:50.786 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.786 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.788 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.788 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.788 [main] INFO  c.o.steps.DatabaseValidationSteps - Database connection verified successfully
+2026-04-02 12:35:50.788 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying table 'ohrm_nationality' exists
+2026-04-02 12:35:50.788 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ? AND TABLE_SCHEMA = DATABASE()
+2026-04-02 12:35:50.788 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.788 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.789 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.789 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.789 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.789 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.789 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.793 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.794 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.794 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.794 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.794 [main] INFO  c.o.steps.DatabaseValidationSteps - Table 'ohrm_nationality' exists — confirmed
+2026-04-02 12:35:50.795 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'Survivor_Auto'
+2026-04-02 12:35:50.795 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.795 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.797 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.798 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.798 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.798 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'Survivor_Auto'
+2026-04-02 12:35:50.798 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Ensuring no record in 'ohrm_nationality' where name = 'Victim_Auto'
+2026-04-02 12:35:50.798 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.798 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.799 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.800 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.801 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.801 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.801 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.801 [main] INFO  c.o.steps.DatabaseValidationSteps - Clean state ensured — no record in 'ohrm_nationality' where name = 'Victim_Auto'
+2026-04-02 12:35:50.801 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=990, name=Survivor_Auto
+2026-04-02 12:35:50.802 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.802 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.802 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.804 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.808 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.809 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.809 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Inserting record into 'ohrm_nationality' with values: id=991, name=Victim_Auto
+2026-04-02 12:35:50.809 [main] INFO  com.orangehrm.db.DatabaseUtil - insertRow — table: ohrm_nationality, columns: name, id
+2026-04-02 12:35:50.809 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: INSERT INTO ohrm_nationality (name, id) VALUES (?, ?)
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.809 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.811 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.815 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.815 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.815 [main] INFO  c.o.steps.DatabaseValidationSteps - Insert completed — 1 row(s) affected
+2026-04-02 12:35:50.815 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Deleting from 'ohrm_nationality' WHERE id = '991'
+2026-04-02 12:35:50.815 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.815 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.815 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.815 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.815 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.815 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.815 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.816 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.816 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.817 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.822 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.822 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.822 [main] INFO  c.o.steps.DatabaseValidationSteps - Delete completed — 1 row(s) affected
+2026-04-02 12:35:50.822 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting record exists in 'ohrm_nationality' where name = 'Survivor_Auto'
+2026-04-02 12:35:50.823 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.823 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.825 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.828 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 1 row(s)
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.829 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: true
+2026-04-02 12:35:50.829 [main] INFO  c.o.steps.DatabaseValidationSteps - Record existence confirmed
+2026-04-02 12:35:50.829 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Asserting no record in 'ohrm_nationality' where name = 'Victim_Auto'
+2026-04-02 12:35:50.829 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeQuery — SQL: SELECT * FROM ohrm_nationality WHERE name = ?
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.829 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.832 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.832 [main] INFO  com.orangehrm.db.DatabaseUtil - Query returned 0 row(s)
+2026-04-02 12:35:50.832 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.832 [main] INFO  com.orangehrm.db.DatabaseUtil - recordExists — result: false
+2026-04-02 12:35:50.833 [main] INFO  c.o.steps.DatabaseValidationSteps - No-record assertion passed
+2026-04-02 12:35:50.833 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Cleaning up record in 'ohrm_nationality' where id = '990'
+2026-04-02 12:35:50.833 [main] INFO  com.orangehrm.db.DatabaseUtil - deleteRows — table: ohrm_nationality, WHERE: id = ?
+2026-04-02 12:35:50.833 [main] INFO  com.orangehrm.db.DatabaseUtil - DatabaseUtil.executeUpdate — SQL: DELETE FROM ohrm_nationality WHERE id = ?
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.db.DatabaseUtil - DatabaseUtil.getConnection — environment: dev
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] resolved from base config
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.username] resolved from base config
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.password] resolved from base config
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.driver] resolved from base config
+2026-04-02 12:35:50.833 [main] DEBUG com.orangehrm.db.DatabaseUtil - JDBC driver loaded: com.mysql.cj.jdbc.Driver
+2026-04-02 12:35:50.837 [main] INFO  com.orangehrm.db.DatabaseUtil - Database connection established — URL: jdbc:mysql://localhost:3306/orangehrm?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+2026-04-02 12:35:50.841 [main] INFO  com.orangehrm.db.DatabaseUtil - Update affected 1 row(s)
+2026-04-02 12:35:50.841 [main] DEBUG com.orangehrm.db.DatabaseUtil - Database connection closed
+2026-04-02 12:35:50.841 [main] INFO  c.o.steps.DatabaseValidationSteps - Cleanup completed — 1 row(s) deleted
+2026-04-02 12:35:50.842 [main] INFO  com.orangehrm.hooks.Hooks - SCENARIO PASSED/SKIPPED: Validate deletion does not affect unrelated records [thread=main]
+2026-04-02 12:35:50.842 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.842 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion does not affect unrelated records [PASSED/SKIPPED] [thread=main]
+2026-04-02 12:35:50.842 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.940 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.941 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Successful admin login with configured credentials [thread=main]
+2026-04-02 12:35:50.941 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:50.941 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:50.941 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:50.941 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:50.949 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:50.998 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:50.998 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:50.998 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107693601622308
+2026-04-02 12:35:51.380 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:51.789 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Successful admin login with configured credentials [thread=main]
+2026-04-02 12:35:51.789 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:51.789 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Successful admin login with configured credentials [FAILED] [thread=main]
+2026-04-02 12:35:51.789 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:51.795 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:51.795 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Login form contains CSRF protection [thread=main]
+2026-04-02 12:35:51.795 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:51.795 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:51.795 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:51.795 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:51.803 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:51.806 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:51.806 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:51.806 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107694409732893
+2026-04-02 12:35:52.261 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:52.666 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Login form contains CSRF protection [thread=main]
+2026-04-02 12:35:52.666 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:52.666 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Login form contains CSRF protection [FAILED] [thread=main]
+2026-04-02 12:35:52.666 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:52.670 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:52.670 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: CSRF token is submitted with login request [thread=main]
+2026-04-02 12:35:52.670 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:52.670 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:52.670 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:52.670 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:52.676 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:52.678 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:52.678 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:52.678 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107695282027369
+2026-04-02 12:35:53.139 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:53.553 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: CSRF token is submitted with login request [thread=main]
+2026-04-02 12:35:53.553 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:53.553 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: CSRF token is submitted with login request [FAILED] [thread=main]
+2026-04-02 12:35:53.553 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:53.565 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:53.565 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Login page displays social media section [thread=main]
+2026-04-02 12:35:53.565 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:53.565 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:53.565 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:53.565 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:53.571 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:53.573 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:53.573 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:53.573 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107696177043992
+2026-04-02 12:35:53.981 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:54.381 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Login page displays social media section [thread=main]
+2026-04-02 12:35:54.381 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:54.381 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Login page displays social media section [FAILED] [thread=main]
+2026-04-02 12:35:54.381 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:54.385 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:54.385 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: XSS prevention in login fields [thread=main]
+2026-04-02 12:35:54.385 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:54.385 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:54.385 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:54.385 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:54.390 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:54.392 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:54.392 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:54.392 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107696996033311
+2026-04-02 12:35:54.869 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:55.265 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: XSS prevention in login fields [thread=main]
+2026-04-02 12:35:55.265 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:55.265 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: XSS prevention in login fields [FAILED] [thread=main]
+2026-04-02 12:35:55.265 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:55.269 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:55.269 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Session timeout redirects to login [thread=main]
+2026-04-02 12:35:55.269 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:55.269 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:55.269 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:55.269 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:55.275 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:55.279 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:55.279 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:55.279 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107697882477916
+2026-04-02 12:35:55.662 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:56.071 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Session timeout redirects to login [thread=main]
+2026-04-02 12:35:56.071 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.071 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Session timeout redirects to login [FAILED] [thread=main]
+2026-04-02 12:35:56.071 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.076 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.076 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Re-login after session timeout [thread=main]
+2026-04-02 12:35:56.076 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:56.076 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:56.076 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.076 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:56.081 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:56.083 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:56.084 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:56.084 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107698687412792
+2026-04-02 12:35:56.486 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:56.897 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Re-login after session timeout [thread=main]
+2026-04-02 12:35:56.897 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.897 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Re-login after session timeout [FAILED] [thread=main]
+2026-04-02 12:35:56.897 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.901 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.901 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Unauthenticated access redirects to login [thread=main]
+2026-04-02 12:35:56.901 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @login]
+2026-04-02 12:35:56.901 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:56.901 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:56.901 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:56.907 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:56.909 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:56.909 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:56.909 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107699512853204
+2026-04-02 12:35:57.287 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:57.690 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Unauthenticated access redirects to login [thread=main]
+2026-04-02 12:35:57.690 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:57.690 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Unauthenticated access redirects to login [FAILED] [thread=main]
+2026-04-02 12:35:57.690 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:57.695 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:57.695 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Dashboard page loads all core widgets [thread=main]
+2026-04-02 12:35:57.695 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @ui, @login]
+2026-04-02 12:35:57.695 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:57.695 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:57.695 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:57.700 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:57.702 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:57.702 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:57.702 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107700305517264
+2026-04-02 12:35:58.076 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:58.498 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Dashboard page loads all core widgets [thread=main]
+2026-04-02 12:35:58.498 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:58.498 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Dashboard page loads all core widgets [FAILED] [thread=main]
+2026-04-02 12:35:58.498 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:58.502 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:58.502 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Dashboard charts render [thread=main]
+2026-04-02 12:35:58.502 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @ui, @login]
+2026-04-02 12:35:58.502 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:58.502 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:58.502 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:58.507 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:58.509 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:58.510 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:58.510 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107701113345168
+2026-04-02 12:35:58.949 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:35:59.359 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Dashboard charts render [thread=main]
+2026-04-02 12:35:59.359 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:59.359 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Dashboard charts render [FAILED] [thread=main]
+2026-04-02 12:35:59.360 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:59.364 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:59.364 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Unauthenticated dashboard access redirects to login [thread=main]
+2026-04-02 12:35:59.364 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@regression, @top-priority, @ui, @login]
+2026-04-02 12:35:59.364 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:35:59.364 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:35:59.364 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:35:59.369 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:35:59.371 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:35:59.371 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:35:59.371 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107701974426924
+2026-04-02 12:35:59.764 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:00.167 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Unauthenticated dashboard access redirects to login [thread=main]
+2026-04-02 12:36:00.168 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.168 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Unauthenticated dashboard access redirects to login [FAILED] [thread=main]
+2026-04-02 12:36:00.168 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.173 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.173 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Admin user can log in successfully [thread=main]
+2026-04-02 12:36:00.173 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@smoke, @critical, @login]
+2026-04-02 12:36:00.173 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:36:00.173 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.173 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:36:00.177 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:36:00.179 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:36:00.179 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:36:00.179 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107702782869270
+2026-04-02 12:36:00.575 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:00.990 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Admin user can log in successfully [thread=main]
+2026-04-02 12:36:00.990 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.990 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Admin user can log in successfully [FAILED] [thread=main]
+2026-04-02 12:36:00.990 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.993 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.993 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Login page displays branding elements [thread=main]
+2026-04-02 12:36:00.993 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@smoke, @critical, @login]
+2026-04-02 12:36:00.993 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:36:00.993 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:00.993 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:36:00.998 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:36:01.000 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:36:01.000 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:36:01.000 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107703603515693
+2026-04-02 12:36:01.388 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:01.793 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Login page displays branding elements [thread=main]
+2026-04-02 12:36:01.793 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:01.793 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Login page displays branding elements [FAILED] [thread=main]
+2026-04-02 12:36:01.793 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:01.796 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:01.796 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Empty credentials show validation errors [thread=main]
+2026-04-02 12:36:01.796 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@smoke, @critical, @login]
+2026-04-02 12:36:01.796 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:36:01.796 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:01.796 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:36:01.800 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:36:01.802 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:36:01.802 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:36:01.803 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107704406229973
+2026-04-02 12:36:02.212 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:02.621 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Empty credentials show validation errors [thread=main]
+2026-04-02 12:36:02.621 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:02.621 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Empty credentials show validation errors [FAILED] [thread=main]
+2026-04-02 12:36:02.621 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:02.624 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:02.624 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Invalid credentials show error message [thread=main]
+2026-04-02 12:36:02.625 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@smoke, @critical, @login]
+2026-04-02 12:36:02.625 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:36:02.625 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:02.625 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:36:02.630 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:36:02.632 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:36:02.632 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:36:02.632 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107705235492704
+2026-04-02 12:36:03.081 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:03.503 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Invalid credentials show error message [thread=main]
+2026-04-02 12:36:03.503 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:03.503 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Invalid credentials show error message [FAILED] [thread=main]
+2026-04-02 12:36:03.503 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:03.508 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:03.508 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Dashboard loads after admin login [thread=main]
+2026-04-02 12:36:03.508 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@smoke, @critical, @ui, @login]
+2026-04-02 12:36:03.508 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:36:03.508 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:03.508 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:36:03.513 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:36:03.515 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:36:03.515 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:36:03.515 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107706119202638
+2026-04-02 12:36:04.009 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:04.419 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Dashboard loads after admin login [thread=main]
+2026-04-02 12:36:04.419 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:04.419 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Dashboard loads after admin login [FAILED] [thread=main]
+2026-04-02 12:36:04.419 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:04.422 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:04.422 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Dashboard displays Quick Launch widget [thread=main]
+2026-04-02 12:36:04.422 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@smoke, @critical, @ui, @login]
+2026-04-02 12:36:04.422 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 12:36:04.422 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:04.422 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver — browser=chrome, headless=false, thread=main
+2026-04-02 12:36:04.426 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 12:36:04.428 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 12:36:04.428 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADED mode
+2026-04-02 12:36:04.428 [main] DEBUG com.orangehrm.driver.DriverFactory - Chrome user-data-dir for thread main: /tmp/chrome-profile-1-107707032212636
+2026-04-02 12:36:04.845 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 12:36:05.257 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Dashboard displays Quick Launch widget [thread=main]
+2026-04-02 12:36:05.258 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 12:36:05.258 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Dashboard displays Quick Launch widget [FAILED] [thread=main]
+2026-04-02 12:36:05.258 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================

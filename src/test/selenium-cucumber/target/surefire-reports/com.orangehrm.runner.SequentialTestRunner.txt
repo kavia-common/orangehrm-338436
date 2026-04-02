@@ -1,13 +1,85 @@
 -------------------------------------------------------------------------------
 Test set: com.orangehrm.runner.SequentialTestRunner
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 9, Time elapsed: 3.168 s -- in com.orangehrm.runner.SequentialTestRunner
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
-Database Validation skipped
+Tests run: 9, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 3.259 s <<< FAILURE! -- in com.orangehrm.runner.SequentialTestRunner
+Database Validation.Verify database connectivity -- Time elapsed: 1.869 s <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+unknown error: JavaScript code failed
+from unknown command: 'Runtime.evaluate' wasn't found
+  (Session info: chrome=146.0.7680.177)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e4296459d590de0830fcd34db8a0e4cb, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.177, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: /tmp/chrome-profile-1-10769...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36519}, goog:processID: 13145, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36519/devtoo..., se:cdpVersion: 146.0.7680.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e4296459d590de0830fcd34db8a0e4cb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:592)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1035)
+	at com.orangehrm.driver.DriverFactory.initDriver(DriverFactory.java:118)
+	at com.orangehrm.hooks.Hooks.setUp(Hooks.java:115)
+
+Database Validation.Validate data insertion into a table -- Time elapsed: 0.275 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'the operation should affect 1 row(s)' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("the operation should affect {int} row\\(s)")
+public void the_operation_should_affect_row_s(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Database Validation.Validate inserted record count -- Time elapsed: 0.069 s
+Database Validation.Validate insertion with query verification -- Time elapsed: 0.045 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'the query result should contain 1 row(s)' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("the query result should contain {int} row\\(s)")
+public void the_query_result_should_contain_row_s(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Database Validation.Validate data update in a table -- Time elapsed: 0.069 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'the operation should affect 1 row(s)' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("the operation should affect {int} row\\(s)")
+public void the_operation_should_affect_row_s(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Database Validation.Validate update does not affect unrelated records -- Time elapsed: 0.086 s
+Database Validation.Validate data deletion from a table -- Time elapsed: 0.049 s <<< ERROR!
+io.cucumber.junit.UndefinedStepException: 
+The step 'the operation should affect 1 row(s)' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("the operation should affect {int} row\\(s)")
+public void the_operation_should_affect_row_s(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+
+Database Validation.Validate deletion with query verification -- Time elapsed: 0.053 s
+Database Validation.Validate deletion does not affect unrelated records -- Time elapsed: 0.067 s
