@@ -1,0 +1,220 @@
+2026-04-02 09:32:42.584 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 09:32:42.585 [main] INFO  c.orangehrm.config.EnvironmentConfig -         TEST CONFIGURATION SUMMARY                      
+2026-04-02 09:32:42.586 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 09:32:42.586 [main] INFO  com.orangehrm.config.ConfigManager - Loaded configuration from config.properties
+2026-04-02 09:32:42.587 [main] INFO  com.orangehrm.config.ConfigManager - Environment resolved from system property: dev
+2026-04-02 09:32:42.587 [main] INFO  com.orangehrm.config.ConfigManager - ConfigManager initialised -- active environment: [dev]
+2026-04-02 09:32:42.588 [main] DEBUG com.orangehrm.config.ConfigManager - Config [base.url] resolved from base config
+2026-04-02 09:32:42.588 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.username] resolved from base config
+2026-04-02 09:32:42.588 [main] DEBUG com.orangehrm.config.ConfigManager - Config [admin.password] resolved from base config
+2026-04-02 09:32:42.590 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.username] using default: 
+2026-04-02 09:32:42.590 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.username] is not set in any source
+2026-04-02 09:32:42.590 [main] DEBUG com.orangehrm.config.ConfigManager - Config [ess.password] using default: 
+2026-04-02 09:32:42.590 [main] ERROR com.orangehrm.config.ConfigManager - Required configuration key [ess.password] is not set in any source
+2026-04-02 09:32:42.590 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:42.590 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:42.590 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.explicit] resolved from base config
+2026-04-02 09:32:42.590 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   environment         : dev
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   base.url            : https://opensource-demo.orangehrmlive.com
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser             : chrome
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   browser.headless    : true
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.username      : Admin
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   admin.password      : a***3
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.username        : 
+2026-04-02 09:32:42.591 [main] INFO  c.orangehrm.config.EnvironmentConfig -   ess.password        : ***
+2026-04-02 09:32:42.592 [main] INFO  c.orangehrm.config.EnvironmentConfig -   db.configured       : false
+2026-04-02 09:32:42.592 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.explicit       : 15
+2026-04-02 09:32:42.592 [main] INFO  c.orangehrm.config.EnvironmentConfig -   wait.pageLoad       : 30
+2026-04-02 09:32:42.592 [main] INFO  c.orangehrm.config.EnvironmentConfig - ========================================================
+2026-04-02 09:32:42.592 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:42.592 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Verify database connectivity
+2026-04-02 09:32:42.592 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert, @smoke]
+2026-04-02 09:32:42.592 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:42.592 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:42.593 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:43.202 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:43.238 [main] INFO  i.g.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/linux64/chromedriver-linux64.zip
+2026-04-02 09:32:43.516 [main] INFO  i.g.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-linux64.zip
+2026-04-02 09:32:43.688 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:43.692 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:44.554 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:44.558 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:44.578 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:44.581 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:44.581 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:44.587 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Verify database connectivity
+2026-04-02 09:32:44.635 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Verify database connectivity
+2026-04-02 09:32:44.636 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:44.708 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:44.708 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:44.708 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Verify database connectivity [FAILED]
+2026-04-02 09:32:44.709 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:44.757 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:44.757 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data insertion into a table
+2026-04-02 09:32:44.757 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert]
+2026-04-02 09:32:44.757 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:44.757 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:44.758 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:44.840 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:44.844 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:44.844 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:45.126 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:45.129 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:45.149 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:45.150 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:45.150 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:45.156 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate data insertion into a table
+2026-04-02 09:32:45.197 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate data insertion into a table
+2026-04-02 09:32:45.197 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:45.265 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:45.265 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.265 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data insertion into a table [FAILED]
+2026-04-02 09:32:45.265 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.280 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.281 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate inserted record count
+2026-04-02 09:32:45.281 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert]
+2026-04-02 09:32:45.281 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:45.281 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.281 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:45.286 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:45.289 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:45.289 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:45.621 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:45.623 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:45.649 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:45.650 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:45.650 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:45.652 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate inserted record count
+2026-04-02 09:32:45.712 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate inserted record count
+2026-04-02 09:32:45.712 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:45.780 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:45.780 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.780 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate inserted record count [FAILED]
+2026-04-02 09:32:45.780 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.794 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.794 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate insertion with query verification
+2026-04-02 09:32:45.794 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-insert]
+2026-04-02 09:32:45.794 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:45.794 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:45.795 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:45.800 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:45.803 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:45.803 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:46.089 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:46.091 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:46.116 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:46.116 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:46.116 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:46.119 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate insertion with query verification
+2026-04-02 09:32:46.178 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate insertion with query verification
+2026-04-02 09:32:46.178 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:46.246 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:46.246 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.246 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate insertion with query verification [FAILED]
+2026-04-02 09:32:46.246 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.261 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.261 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data update in a table
+2026-04-02 09:32:46.261 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-update]
+2026-04-02 09:32:46.261 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:46.261 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.262 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:46.267 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:46.270 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:46.270 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:46.554 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:46.557 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:46.584 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:46.585 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:46.585 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:46.588 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate data update in a table
+2026-04-02 09:32:46.645 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate data update in a table
+2026-04-02 09:32:46.645 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:46.713 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:46.713 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.713 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data update in a table [FAILED]
+2026-04-02 09:32:46.713 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.722 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.722 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate update does not affect unrelated records
+2026-04-02 09:32:46.723 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-update]
+2026-04-02 09:32:46.723 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:46.723 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:46.723 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:46.729 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:46.732 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:46.732 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:47.022 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:47.025 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:47.050 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:47.050 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:47.051 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:47.053 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate update does not affect unrelated records
+2026-04-02 09:32:47.111 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate update does not affect unrelated records
+2026-04-02 09:32:47.111 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:47.182 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:47.182 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.182 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate update does not affect unrelated records [FAILED]
+2026-04-02 09:32:47.182 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.191 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.191 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate data deletion from a table
+2026-04-02 09:32:47.191 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-delete]
+2026-04-02 09:32:47.191 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:47.191 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.191 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:47.196 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:47.199 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:47.199 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:47.496 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:47.499 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:47.517 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:47.518 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:47.518 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:47.520 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate data deletion from a table
+2026-04-02 09:32:47.565 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate data deletion from a table
+2026-04-02 09:32:47.565 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:47.634 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:47.634 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.634 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate data deletion from a table [FAILED]
+2026-04-02 09:32:47.634 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.643 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.643 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion with query verification
+2026-04-02 09:32:47.643 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-delete]
+2026-04-02 09:32:47.643 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:47.643 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:47.643 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:47.648 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:47.650 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:47.650 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:47.911 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:47.913 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:47.933 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:47.934 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:47.934 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:47.936 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate deletion with query verification
+2026-04-02 09:32:48.001 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate deletion with query verification
+2026-04-02 09:32:48.001 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:48.069 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:48.069 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:48.069 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion with query verification [FAILED]
+2026-04-02 09:32:48.069 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:48.083 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:48.083 [main] INFO  com.orangehrm.hooks.Hooks - STARTING SCENARIO: Validate deletion does not affect unrelated records
+2026-04-02 09:32:48.083 [main] INFO  com.orangehrm.hooks.Hooks - Tags: [@database, @db-validation, @db-delete]
+2026-04-02 09:32:48.083 [main] INFO  com.orangehrm.hooks.Hooks - Environment: dev
+2026-04-02 09:32:48.083 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:48.083 [main] INFO  com.orangehrm.driver.DriverFactory - Initialising WebDriver -- browser=chrome, headless=true
+2026-04-02 09:32:48.088 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-02 09:32:48.090 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/146.0.7680.165/chromedriver
+2026-04-02 09:32:48.090 [main] INFO  com.orangehrm.driver.DriverFactory - Chrome configured in HEADLESS mode
+2026-04-02 09:32:48.371 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.pageLoad] resolved from base config
+2026-04-02 09:32:48.373 [main] DEBUG com.orangehrm.config.ConfigManager - Config [wait.implicit] resolved from base config
+2026-04-02 09:32:48.390 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver initialised successfully (browser=chrome, headless=true)
+2026-04-02 09:32:48.391 [main] INFO  c.o.steps.DatabaseValidationSteps - Step: Verifying database connection for environment 'dev'
+2026-04-02 09:32:48.391 [main] DEBUG com.orangehrm.config.ConfigManager - Config [db.url] using default: 
+2026-04-02 09:32:48.393 [main] ERROR com.orangehrm.hooks.Hooks - SCENARIO FAILED: Validate deletion does not affect unrelated records
+2026-04-02 09:32:48.433 [main] INFO  com.orangehrm.hooks.Hooks - Screenshot captured for failed scenario: Validate deletion does not affect unrelated records
+2026-04-02 09:32:48.433 [main] INFO  com.orangehrm.driver.DriverFactory - Quitting WebDriver...
+2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.driver.DriverFactory - WebDriver instance removed from ThreadLocal
+2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================
+2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.hooks.Hooks - FINISHED SCENARIO: Validate deletion does not affect unrelated records [FAILED]
+2026-04-02 09:32:48.501 [main] INFO  com.orangehrm.hooks.Hooks - ===================================================

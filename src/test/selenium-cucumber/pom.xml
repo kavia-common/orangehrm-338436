@@ -22,7 +22,7 @@
         <slf4j.version>2.0.12</slf4j.version>
         <logback.version>1.5.3</logback.version>
 
-        <!-- Default values -- overridden by profiles or CLI -->
+        <!-- Default values; overridden by profiles or CLI -->
         <test.environment>dev</test.environment>
         <browser>chrome</browser>
         <headless>true</headless>

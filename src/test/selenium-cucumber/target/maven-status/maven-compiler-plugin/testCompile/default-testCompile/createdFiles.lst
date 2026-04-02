@@ -1,7 +1,11 @@
-com/orangehrm/runner/TestRunner.class
 com/orangehrm/config/ConfigManager.class
+com/orangehrm/db/DatabaseException.class
+com/orangehrm/steps/DatabaseValidationSteps.class
+com/orangehrm/db/DatabaseUtil.class
+com/orangehrm/runner/TestRunner.class
 com/orangehrm/steps/DashboardSteps.class
 com/orangehrm/steps/LoginSteps.class
 com/orangehrm/hooks/Hooks.class
 com/orangehrm/driver/DriverFactory.class
 com/orangehrm/pages/BasePage.class
+com/orangehrm/config/EnvironmentConfig.class
