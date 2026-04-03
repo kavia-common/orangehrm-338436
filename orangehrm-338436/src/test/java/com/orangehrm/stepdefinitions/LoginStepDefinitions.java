@@ -73,7 +73,7 @@ public class LoginStepDefinitions {
     @When("I enter a valid username")
     public void iEnterAValidUsername() {
         String username = TestConfig.getUsername();
-        System.out.println("Entering valid username: " + username);
+        System.out.println("Entering valid username: " + TestConfig.mask(username));
         loginPage.enterUsername(username);
     }
 
@@ -97,7 +97,7 @@ public class LoginStepDefinitions {
      */
     @When("I enter an invalid username {string}")
     public void iEnterAnInvalidUsername(String username) {
-        System.out.println("Entering invalid username: " + username);
+        System.out.println("Entering invalid username: " + TestConfig.mask(username));
         loginPage.enterUsername(username);
     }
 
