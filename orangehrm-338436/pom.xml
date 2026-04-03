@@ -20,6 +20,11 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
+        <!-- Browser/test execution defaults (non-headless visible mode) -->
+        <!-- Override via: mvn test -Dheadless=true  or  mvn test -Pheadless -->
+        <browser>chrome</browser>
+        <headless>false</headless>
+
         <!-- Dependency versions -->
         <cucumber.version>7.15.0</cucumber.version>
         <selenium.version>4.31.0</selenium.version>
