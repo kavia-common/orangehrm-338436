@@ -1,6 +1,16 @@
+com/orangehrm/runner/DbModeSimulationTest.class
+com/orangehrm/runner/DbModeSimulationRunner$SimulationRun.class
+com/orangehrm/stepdefinitions/HealthCheckHook.class
+com/orangehrm/stepdefinitions/HealthCheckHook$1.class
+com/orangehrm/stepdefinitions/HealthCheckHook$EnvironmentNotReadyException.class
+com/orangehrm/config/EnvironmentClassifier$ClassificationResult.class
 com/orangehrm/runner/CucumberTestRunner.class
+com/orangehrm/config/EnvironmentClassifier$EnvironmentState.class
 com/orangehrm/pages/LoginPage.class
+com/orangehrm/runner/DbModeSimulationRunner.class
+com/orangehrm/config/EnvironmentClassifier.class
 com/orangehrm/config/TestConfig.class
 com/orangehrm/driver/DriverFactory.class
 com/orangehrm/stepdefinitions/Hooks.class
+com/orangehrm/config/EnvironmentClassifier$ProbeResult.class
 com/orangehrm/stepdefinitions/LoginStepDefinitions.class

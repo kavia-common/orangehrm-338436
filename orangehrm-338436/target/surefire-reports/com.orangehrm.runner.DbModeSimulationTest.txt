@@ -1,0 +1,382 @@
+-------------------------------------------------------------------------------
+Test set: com.orangehrm.runner.DbModeSimulationTest
+-------------------------------------------------------------------------------
+Tests run: 28, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.048 s <<< FAILURE! -- in com.orangehrm.runner.DbModeSimulationTest
+OrangeHRM Login.OrangeHRM Login - Successful login with valid credentials -- Time elapsed: 0.916 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Successful login redirects to expected URL -- Time elapsed: 0.269 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Failed login with invalid username and invalid password -- Time elapsed: 0.301 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Failed login with valid username and wrong password -- Time elapsed: 0.243 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Failed login with invalid username and valid password -- Time elapsed: 0.259 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Login attempt with empty credentials -- Time elapsed: 0.254 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Login attempt with empty username and valid password -- Time elapsed: 0.239 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Login attempt with valid username and empty password -- Time elapsed: 0.232 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login - Failed login with various invalid credential combinations - Examples.OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.1 -- Time elapsed: 0.232 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login - Failed login with various invalid credential combinations - Examples.OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.2 -- Time elapsed: 0.228 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login - Failed login with various invalid credential combinations - Examples.OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.3 -- Time elapsed: 0.229 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login - Failed login with various invalid credential combinations - Examples.OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.4 -- Time elapsed: 0.230 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login - Failed login with various invalid credential combinations - Examples.OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.5 -- Time elapsed: 0.229 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+
+OrangeHRM Login.OrangeHRM Login - Login with spaces-only username and password -- Time elapsed: 0.217 s <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+

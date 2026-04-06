@@ -1,0 +1,1351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.orangehrm.runner.DbModeSimulationTest" time="0.048" tests="28" errors="14" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="webdriver.chrome.driver" value="/home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/test-classes:/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/classes:/home/kavia/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/kavia/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/kavia/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/kavia/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/kavia/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/kavia/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/kavia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/kavia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/kavia/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/kavia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-java/4.31.0/selenium-java-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-api/4.31.0/selenium-api-4.31.0.jar:/home/kavia/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.31.0/selenium-chrome-driver-4.31.0.jar:/home/kavia/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.31.0/selenium-chromium-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-json/4.31.0/selenium-json-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.31.0/selenium-manager-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v133/4.31.0/selenium-devtools-v133-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v134/4.31.0/selenium-devtools-v134-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v135/4.31.0/selenium-devtools-v135-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.31.0/selenium-edge-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.31.0/selenium-firefox-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-http/4.31.0/selenium-http-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.31.0/selenium-ie-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.31.0/selenium-remote-driver-4.31.0.jar:/home/kavia/.m2/repository/com/google/guava/guava/33.4.6-jre/guava-33.4.6-jre.jar:/home/kavia/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/kavia/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/kavia/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-api/1.48.0/opentelemetry-api-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-context/1.48.0/opentelemetry-context-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.48.0/opentelemetry-exporter-logging-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.48.0/opentelemetry-sdk-common-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.48.0/opentelemetry-sdk-extension-autoconfigure-spi-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.48.0/opentelemetry-sdk-extension-autoconfigure-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.48.0/opentelemetry-sdk-trace-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.48.0/opentelemetry-sdk-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.48.0/opentelemetry-sdk-metrics-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.48.0/opentelemetry-sdk-logs-1.48.0.jar:/home/kavia/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-os/4.31.0/selenium-os-4.31.0.jar:/home/kavia/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.31.0/selenium-safari-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-support/4.31.0/selenium-support-4.31.0.jar:/home/kavia/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.2/webdrivermanager-5.9.2.jar:/home/kavia/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/kavia/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java/3.4.0/docker-java-3.4.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-core/3.4.0/docker-java-core-3.4.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/kavia/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.4.0/docker-java-transport-httpclient5-3.4.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-transport/3.4.0/docker-java-transport-3.4.0.jar:/home/kavia/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/kavia/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/kavia/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/home/kavia/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/kavia/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/kavia/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/kavia/.m2/repository/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar:/home/kavia/.m2/repository/org/slf4j/slf4j-simple/2.0.11/slf4j-simple-2.0.11.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/surefire/surefirebooter-20260406070425600_3.jar /home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/surefire 2026-04-06T07-04-25_527-jvmRun1 surefire-20260406070425600_1tmp surefire_0-20260406070425600_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="DbModeSimulationTest"/>
+    <property name="surefire.test.class.path" value="/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/test-classes:/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/classes:/home/kavia/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/kavia/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/kavia/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/kavia/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/kavia/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/kavia/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/kavia/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/kavia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/kavia/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/kavia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/kavia/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/kavia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/home/kavia/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-java/4.31.0/selenium-java-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-api/4.31.0/selenium-api-4.31.0.jar:/home/kavia/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.31.0/selenium-chrome-driver-4.31.0.jar:/home/kavia/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.31.0/selenium-chromium-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-json/4.31.0/selenium-json-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.31.0/selenium-manager-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v133/4.31.0/selenium-devtools-v133-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v134/4.31.0/selenium-devtools-v134-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v135/4.31.0/selenium-devtools-v135-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.31.0/selenium-edge-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.31.0/selenium-firefox-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-http/4.31.0/selenium-http-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.31.0/selenium-ie-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.31.0/selenium-remote-driver-4.31.0.jar:/home/kavia/.m2/repository/com/google/guava/guava/33.4.6-jre/guava-33.4.6-jre.jar:/home/kavia/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/kavia/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/kavia/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-api/1.48.0/opentelemetry-api-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-context/1.48.0/opentelemetry-context-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.48.0/opentelemetry-exporter-logging-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.48.0/opentelemetry-sdk-common-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.48.0/opentelemetry-sdk-extension-autoconfigure-spi-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.48.0/opentelemetry-sdk-extension-autoconfigure-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.48.0/opentelemetry-sdk-trace-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.48.0/opentelemetry-sdk-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.48.0/opentelemetry-sdk-metrics-1.48.0.jar:/home/kavia/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.48.0/opentelemetry-sdk-logs-1.48.0.jar:/home/kavia/.m2/repository/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-os/4.31.0/selenium-os-4.31.0.jar:/home/kavia/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.31.0/selenium-safari-driver-4.31.0.jar:/home/kavia/.m2/repository/org/seleniumhq/selenium/selenium-support/4.31.0/selenium-support-4.31.0.jar:/home/kavia/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.2/webdrivermanager-5.9.2.jar:/home/kavia/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/kavia/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java/3.4.0/docker-java-3.4.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-core/3.4.0/docker-java-core-3.4.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-api/3.4.0/docker-java-api-3.4.0.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/kavia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/kavia/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.4.0/docker-java-transport-httpclient5-3.4.0.jar:/home/kavia/.m2/repository/com/github/docker-java/docker-java-transport/3.4.0/docker-java-transport-3.4.0.jar:/home/kavia/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/kavia/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/kavia/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/home/kavia/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/kavia/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/kavia/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/kavia/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/kavia/.m2/repository/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar:/home/kavia/.m2/repository/org/slf4j/slf4j-simple/2.0.11/slf4j-simple-2.0.11.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/kavia"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="basedir" value="/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436/target/surefire/surefirebooter-20260406070425600_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.17+10-Ubuntu-124.04"/>
+    <property name="user.name" value="kavia"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.10.230-223.885.amzn2.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="browser" value="chrome"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/kavia/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="/home/kavia/workspace/code-generation/orangehrm-338436/orangehrm-338436"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="headless" value="true"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="17.0.17+10-Ubuntu-124.04"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="OrangeHRM Login - Successful login with valid credentials" classname="OrangeHRM Login" time="0.916">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @smoke @positive
+Scenario: Successful login with valid credentials   &amp#27;[90m# src/test/resources/features/login.feature:13&amp#27;[0m
+
+[HealthCheck] Performing environment classification...
+[HealthCheck] Base URL: http://localhost:8080
+
+======================================================
+         ENVIRONMENT CLASSIFICATION RESULT
+======================================================
+  State     : Simulated DB-ON
+  Can Run   : YES
+  Duration  : 2 ms
+------------------------------------------------------
+  Diagnostics:
+    - Base URL: http://localhost:8080
+    - Classification started at: 2026-04-06T07:04:26.587550922Z
+    - Mode: SIMULATION (SIMULATE_DB_STATUS=ON)
+    - Simulating: Application reachable, DB healthy
+    - All scenarios should execute normally (mocked environment)
+======================================================
+
+[HealthCheck] Scenario: Successful login with valid credentials | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Successful login with valid credentials
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m      &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter a valid username&amp#27;[0m                     &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidUsername()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter a valid password&amp#27;[0m                      &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidPassword()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                      &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should be redirected to the dashboard page&amp#27;[0m &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldBeRedirectedToTheDashboardPage()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI should see the dashboard header&amp#27;[0m             &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeTheDashboardHeader()&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Successful login with valid credentials
+]]></system-out>
+    <system-err><![CDATA[Apr 06, 2026 7:04:25 AM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors.
+See: https://github.com/cucumber/cucumber-jvm/pull/2498
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Successful login redirects to expected URL" classname="OrangeHRM Login" time="0.269">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @positive
+Scenario: Successful login redirects to expected URL &amp#27;[90m# src/test/resources/features/login.feature:21&amp#27;[0m
+[HealthCheck] Scenario: Successful login redirects to expected URL | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Successful login redirects to expected URL
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m       &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter a valid username&amp#27;[0m                      &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidUsername()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter a valid password&amp#27;[0m                       &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidPassword()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                       &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mthe page URL should contain &amp#27;[0m&amp#27;[36m&amp#27;[1m"/dashboard"&amp#27;[0m      &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.thePageUrlShouldContain(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Successful login redirects to expected URL
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with invalid username and invalid password" classname="OrangeHRM Login" time="0.301">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Failed login with invalid username and invalid password &amp#27;[90m# src/test/resources/features/login.feature:30&amp#27;[0m
+[HealthCheck] Scenario: Failed login with invalid username and invalid password | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with invalid username and invalid password
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                    &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"InvalidUser"&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"InvalidPass123"&amp#27;[0m                &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                    &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m        &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with invalid username and invalid password
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with valid username and wrong password" classname="OrangeHRM Login" time="0.243">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Failed login with valid username and wrong password &amp#27;[90m# src/test/resources/features/login.feature:37&amp#27;[0m
+[HealthCheck] Scenario: Failed login with valid username and wrong password | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with valid username and wrong password
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter a valid username&amp#27;[0m                               &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidUsername()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"WrongPassword!"&amp#27;[0m            &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m    &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with valid username and wrong password
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with invalid username and valid password" classname="OrangeHRM Login" time="0.259">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Failed login with invalid username and valid password &amp#27;[90m# src/test/resources/features/login.feature:44&amp#27;[0m
+[HealthCheck] Scenario: Failed login with invalid username and valid password | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with invalid username and valid password
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"NonExistentUser"&amp#27;[0m            &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter a valid password&amp#27;[0m                                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidPassword()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m      &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with invalid username and valid password
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Login attempt with empty credentials" classname="OrangeHRM Login" time="0.254">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Login attempt with empty credentials          &amp#27;[90m# src/test/resources/features/login.feature:51&amp#27;[0m
+[HealthCheck] Scenario: Login attempt with empty credentials | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Login attempt with empty credentials
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m          &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                         &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see a required field validation message&amp#27;[0m &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeARequiredFieldValidationMessage()&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Login attempt with empty credentials
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Login attempt with empty username and valid password" classname="OrangeHRM Login" time="0.239">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Login attempt with empty username and valid password &amp#27;[90m# src/test/resources/features/login.feature:56&amp#27;[0m
+[HealthCheck] Scenario: Login attempt with empty username and valid password | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Login attempt with empty username and valid password
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                 &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter a valid password&amp#27;[0m                                &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidPassword()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                 &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see a required field validation message&amp#27;[0m        &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeARequiredFieldValidationMessage()&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Login attempt with empty username and valid password
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Login attempt with valid username and empty password" classname="OrangeHRM Login" time="0.232">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Login attempt with valid username and empty password &amp#27;[90m# src/test/resources/features/login.feature:62&amp#27;[0m
+[HealthCheck] Scenario: Login attempt with valid username and empty password | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Login attempt with valid username and empty password
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                 &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter a valid username&amp#27;[0m                                &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAValidUsername()&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                 &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see a required field validation message&amp#27;[0m        &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeARequiredFieldValidationMessage()&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Login attempt with valid username and empty password
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Login with spaces-only username and password" classname="OrangeHRM Login" time="0.217">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario: Login with spaces-only username and password     &amp#27;[90m# src/test/resources/features/login.feature:83&amp#27;[0m
+[HealthCheck] Scenario: Login with spaces-only username and password | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Login with spaces-only username and password
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m             &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"   "&amp#27;[0m                   &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"   "&amp#27;[0m                    &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                             &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Login with spaces-only username and password
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.1" classname="OrangeHRM Login - Failed login with various invalid credential combinations - Examples" time="0.232">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario Outline: Failed login with various invalid credential combinations &amp#27;[90m# src/test/resources/features/login.feature:76&amp#27;[0m
+[HealthCheck] Scenario: Failed login with various invalid credential combinations | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with various invalid credential combinations
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"admin"&amp#27;[0m                                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"admin"&amp#27;[0m                                   &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with various invalid credential combinations
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.2" classname="OrangeHRM Login - Failed login with various invalid credential combinations - Examples" time="0.228">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario Outline: Failed login with various invalid credential combinations &amp#27;[90m# src/test/resources/features/login.feature:77&amp#27;[0m
+[HealthCheck] Scenario: Failed login with various invalid credential combinations | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with various invalid credential combinations
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"Admin"&amp#27;[0m                                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"wrongpassword"&amp#27;[0m                           &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with various invalid credential combinations
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.3" classname="OrangeHRM Login - Failed login with various invalid credential combinations - Examples" time="0.229">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario Outline: Failed login with various invalid credential combinations &amp#27;[90m# src/test/resources/features/login.feature:78&amp#27;[0m
+[HealthCheck] Scenario: Failed login with various invalid credential combinations | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with various invalid credential combinations
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"test@user.com"&amp#27;[0m                          &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"test123"&amp#27;[0m                                 &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with various invalid credential combinations
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.4" classname="OrangeHRM Login - Failed login with various invalid credential combinations - Examples" time="0.23">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario Outline: Failed login with various invalid credential combinations &amp#27;[90m# src/test/resources/features/login.feature:79&amp#27;[0m
+[HealthCheck] Scenario: Failed login with various invalid credential combinations | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with various invalid credential combinations
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"' OR '1'='1"&amp#27;[0m                            &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"' OR '1'='1"&amp#27;[0m                             &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with various invalid credential combinations
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="OrangeHRM Login - Failed login with various invalid credential combinations - Examples - Example #1.5" classname="OrangeHRM Login - Failed login with various invalid credential combinations - Examples" time="0.229">
+    <error message="Could not start a new session. Response code 500. Message: session not created&#10;from unknown error: cannot find Chrome binary &#10;Host info: host: &apos;e602cd0e006f&apos;, ip: &apos;172.17.0.2&apos;&#10;Build info: version: &apos;4.31.0&apos;, revision: &apos;1ef9f18787*&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.10.230-223.885.amzn2.x86_64&apos;, java.version: &apos;17.0.17&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException"><![CDATA[org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+]]></error>
+    <system-out><![CDATA[
+@login @negative
+Scenario Outline: Failed login with various invalid credential combinations &amp#27;[90m# src/test/resources/features/login.feature:80&amp#27;[0m
+[HealthCheck] Scenario: Failed login with various invalid credential combinations | Environment: Simulated DB-ON
+[HealthCheck] Running in SIMULATED DB-ON mode. Scenarios will execute but may fail at Selenium level if no real app is present.
+Starting scenario: Failed login with various invalid credential combinations
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+      &amp#27;[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:245)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:110)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+	at com.orangehrm.driver.DriverFactory.createChromeDriver(DriverFactory.java:216)
+	at com.orangehrm.driver.DriverFactory.createDriver(DriverFactory.java:127)
+	at com.orangehrm.driver.DriverFactory.getDriver(DriverFactory.java:82)
+	at com.orangehrm.stepdefinitions.Hooks.setUp(Hooks.java:43)
+&amp#27;[0m
+  &amp#27;[36mGiven &amp#27;[0m&amp#27;[36mI navigate to the OrangeHRM login page&amp#27;[0m                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iNavigateToTheOrangeHRMLoginPage()&amp#27;[0m
+  &amp#27;[36mWhen &amp#27;[0m&amp#27;[36mI enter an invalid username &amp#27;[0m&amp#27;[36m&amp#27;[1m"ADMIN"&amp#27;[0m                                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidUsername(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI enter an invalid password &amp#27;[0m&amp#27;[36m&amp#27;[1m"ADMIN123"&amp#27;[0m                                &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iEnterAnInvalidPassword(java.lang.String)&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mI click the login button&amp#27;[0m                                              &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iClickTheLoginButton()&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mI should see an error message &amp#27;[0m&amp#27;[36m&amp#27;[1m"Invalid credentials"&amp#27;[0m                  &amp#27;[90m# com.orangehrm.stepdefinitions.LoginStepDefinitions.iShouldSeeAnErrorMessage(java.lang.String)&amp#27;[0m
+=== WebDriver Configuration ===
+  Browser : chrome
+  Headless: true
+  DISPLAY : (not set)
+  Mode    : HEADLESS – no browser window will be shown
+================================
+Completed scenario: Failed login with various invalid credential combinations
+]]></system-out>
+    <system-err><![CDATA[[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/kavia/.cache/selenium/chromedriver/linux64/147.0.7727.50/chromedriver
+Warning: tearDown skipped driver cleanup (driver not initialized or already closed): Could not start a new session. Response code 500. Message: session not created
+from unknown error: cannot find Chrome binary 
+Host info: host: 'e602cd0e006f', ip: '172.17.0.2'
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.230-223.885.amzn2.x86_64', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--headless=new, --disable-gpu, --no-sandbox, --disable-dev-shm-usage, --window-size=1920,1080, --remote-allow-origins=*], extensions: []}}]}]
+]]></system-err>
+  </testcase>
+  <testcase name="testDbOffDiagnosticsContainDbDownInfo" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.011"/>
+  <testcase name="testClassificationDurationIsNonNegative" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testDbOffSimulationConsistency" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.002"/>
+  <testcase name="testDbOffSimulationClassifiesCorrectly" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testIsSimulationModeReturnsFalse" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.0"/>
+  <testcase name="testDbOnDiagnosticsContainSimulationInfo" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testIsSimulationModeReturnsTrue" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testDbOnSimulationClassifiesCorrectly" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testModesProduceDifferentStates" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testMaskUtility" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.003"/>
+  <testcase name="testUnknownSimulationFlagValue" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.004"/>
+  <testcase name="testFullSimulationRunnerProducesReport" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.006">
+    <system-out><![CDATA[
+=== DB-ON vs DB-OFF Simulation Started ===
+Runs per mode: 3
+
+--- Phase 1: DB-ON Simulation ---
+  Run 1/3 [DB-ON]...
+    State: Simulated DB-ON | Can run: true | Duration: 0ms
+  Run 2/3 [DB-ON]...
+    State: Simulated DB-ON | Can run: true | Duration: 0ms
+  Run 3/3 [DB-ON]...
+    State: Simulated DB-ON | Can run: true | Duration: 0ms
+
+--- Phase 2: DB-OFF Simulation ---
+  Run 1/3 [DB-OFF]...
+    State: Simulated DB-OFF | Can run: false | Duration: 0ms
+  Run 2/3 [DB-OFF]...
+    State: Simulated DB-OFF | Can run: false | Duration: 0ms
+  Run 3/3 [DB-OFF]...
+    State: Simulated DB-OFF | Can run: false | Duration: 0ms
+
+--- Phase 3: Generating Report ---
+
+=== DB-ON vs DB-OFF Simulation Complete ===
+]]></system-out>
+  </testcase>
+  <testcase name="testFormatSummaryProducesOutput" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+  <testcase name="testDbOnSimulationConsistency" classname="com.orangehrm.runner.DbModeSimulationTest" time="0.001"/>
+</testsuite>

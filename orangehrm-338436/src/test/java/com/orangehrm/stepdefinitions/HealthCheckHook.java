@@ -126,7 +126,7 @@ public class HealthCheckHook {
     /**
      * Resets the cached state. Used by simulation runners between runs.
      */
-    static void resetCache() {
+    public static void resetCache() {
         synchronized (LOCK) {
             cachedResult = null;
             skippedScenarioCount = 0;
