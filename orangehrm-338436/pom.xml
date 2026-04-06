@@ -179,5 +179,75 @@
                 <browser>firefox</browser>
             </properties>
         </profile>
+
+        <!-- Profile for running DB-ON simulation tests only (JUnit Jupiter engine) -->
+        <profile>
+            <id>simulate-db-on</id>
+            <properties>
+                <headless>true</headless>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven.surefire.version}</version>
+                        <configuration>
+                            <properties>
+                                <configurationParameters>
+                                    cucumber.junit-platform.naming-strategy=long
+                                </configurationParameters>
+                            </properties>
+                            <systemPropertyVariables>
+                                <browser>${browser}</browser>
+                                <headless>true</headless>
+                                <SIMULATE_DB_STATUS>ON</SIMULATE_DB_STATUS>
+                            </systemPropertyVariables>
+                            <includes>
+                                <include>**/DbModeSimulationTest.java</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/CucumberTestRunner.java</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Profile for running DB-OFF simulation tests only (JUnit Jupiter engine) -->
+        <profile>
+            <id>simulate-db-off</id>
+            <properties>
+                <headless>true</headless>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven.surefire.version}</version>
+                        <configuration>
+                            <properties>
+                                <configurationParameters>
+                                    cucumber.junit-platform.naming-strategy=long
+                                </configurationParameters>
+                            </properties>
+                            <systemPropertyVariables>
+                                <browser>${browser}</browser>
+                                <headless>true</headless>
+                                <SIMULATE_DB_STATUS>OFF</SIMULATE_DB_STATUS>
+                            </systemPropertyVariables>
+                            <includes>
+                                <include>**/DbModeSimulationTest.java</include>
+                            </includes>
+                            <excludes>
+                                <exclude>**/CucumberTestRunner.java</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
